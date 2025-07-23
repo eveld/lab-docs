@@ -462,4 +462,18 @@ nav[aria-labelledby="on-this-page-heading"] {
   .content-panel:where(.astro-7nkwcw3z) + .content-panel:where(.astro-7nkwcw3z) {
     border-top: none !important;
   }
+  
+  /* Remove border from right sidebar */
+  @media (min-width: 72rem) {
+    .right-sidebar:where(.astro-67yu43on) {
+      position: fixed;
+      top: 0;
+      border-inline-start: none !important;
+      padding-top: var(--sl-nav-height);
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+  }
 }
