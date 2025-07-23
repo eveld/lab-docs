@@ -476,4 +476,14 @@ nav[aria-labelledby="on-this-page-heading"] {
       scrollbar-width: none;
     }
   }
+  
+  /* Remove border from left sidebar */
+  @media (min-width: 50rem) {
+    .sidebar-pane:where(.astro-vrdttmbt) {
+      --sl-sidebar-visibility: visible;
+      width: var(--sl-sidebar-width);
+      background-color: var(--sl-color-bg-sidebar);
+      border-inline-end: none !important;
+    }
+  }
 }
