@@ -391,3 +391,47 @@ dialog[aria-label="Search"]::backdrop {
   --mermaid-secondary-color: #4b5563;
   --mermaid-tertiary-color: #6b7280;
 }
+
+/* Add space above "On this page" section */
+.right-sidebar-panel,
+nav[aria-labelledby="on-this-page-heading"] {
+  margin-top: 2rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Add space above the "On this page" heading specifically */
+.right-sidebar h2,
+.right-sidebar-panel h2,
+#on-this-page-heading {
+  margin-top: 2rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Add space above left sidebar navigation content */
+.sl-sidebar-content,
+.starlight-sidebar nav,
+.sidebar nav[aria-label="Main"] {
+  margin-top: 2rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Target the main navigation list in the left sidebar */
+.sl-sidebar-content > ul,
+.starlight-sidebar nav > ul,
+.sidebar nav[aria-label="Main"] > ul {
+  margin-top: 1rem !important;
+}
+
+/* Add spacing to top-level navigation groups */
+.sl-sidebar-content > ul > li,
+.starlight-sidebar nav > ul > li,
+.sidebar nav[aria-label="Main"] > ul > li {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Add breathing room between navigation sections with details */
+.sl-sidebar-content details,
+.starlight-sidebar nav details,
+.sidebar nav[aria-label="Main"] details {
+  margin-bottom: 1rem !important;
+}
