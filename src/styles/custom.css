@@ -402,7 +402,6 @@ nav[aria-labelledby="on-this-page-heading"] {
 .right-sidebar h2,
 .right-sidebar-panel h2,
 #on-this-page-heading {
-  margin-top: 2rem !important;
   padding-top: 1rem !important;
 }
 
