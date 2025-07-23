@@ -319,9 +319,7 @@ starlight-theme-select,
 .search-input,
 .search input,
 [data-search-input],
-.DocSearch-Input,
-[data-open-modal],
-button[data-open-modal] {
+.DocSearch-Input {
   background-color: #141829 !important;
   border-color: #2a2f45 !important;
 }
@@ -339,7 +337,7 @@ button[aria-label="Search"] svg {
 button[data-open-modal],
 button[aria-label="Search"],
 .search-button {
-  background-color: #141829 !important;
+  background-color: #181c32 !important;
   border: none !important;
 }
 
