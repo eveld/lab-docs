@@ -14,6 +14,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Instruqt Lab Documentation',
+			logo: {
+				src: './src/assets/instruqt-logo.svg',
+				replacesTitle: true,
+			},
 			description: 'Complete guide to creating and managing Instruqt labs',
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/eveld/lab-docs' }
