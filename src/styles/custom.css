@@ -456,3 +456,10 @@ nav[aria-labelledby="on-this-page-heading"] {
     }
   }
 }
+
+/* Remove border from content panels */
+@layer starlight.core {
+  .content-panel:where(.astro-7nkwcw3z) + .content-panel:where(.astro-7nkwcw3z) {
+    border-top: none !important;
+  }
+}
