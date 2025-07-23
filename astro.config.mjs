@@ -9,13 +9,14 @@ import { pluginCodeOutput } from '@fujocoded/expressive-code-output';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://instruqt.github.io/lab-docs-v2',
+	site: 'http://erikveld.com',
+	base: '/lab-docs',
 	integrations: [
 		starlight({
 			title: 'Instruqt Lab Documentation',
 			description: 'Complete guide to creating and managing Instruqt labs',
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/instruqt/lab-docs-v2' }
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/eveld/lab-docs' }
 			],
 			sidebar: [
 				{
@@ -58,7 +59,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'API Reference',
+					label: 'Configuration Reference',
 					autogenerate: { directory: 'api' },
 				},
 			],
