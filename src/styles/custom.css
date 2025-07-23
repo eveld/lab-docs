@@ -574,9 +574,9 @@ sl-sidebar-state-persist {
   color: var(--sl-color-text-accent) !important;
 }
 
-/* Mobile sidebar nested lists - only add border to nested ul elements */
+
+/* Mobile sidebar nested lists - padding/margin without border */
 .astro-3ii7xxms details ul {
-  border-left: 1px solid var(--sl-color-hairline-shade) !important;
   margin-left: 1rem !important;
   padding-left: 1rem !important;
 }
