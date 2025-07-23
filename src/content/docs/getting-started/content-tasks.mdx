@@ -175,7 +175,7 @@ Editing `index.html` directly modifies the content nginx serves. Static files ar
 
 Define the user interface with `layouts.hcl`:
 
-```hcl showLineNumbers title="layouts.hcl" {1-22}
+```hcl showLineNumbers title="layouts.hcl" {1-24}
 resource "layout" "two_column" {
   column {
     width = 50
@@ -221,7 +221,7 @@ resource "page" "customize_homepage" {
 
 Update the skeleton's `main.hcl` to reference your new content:
 
-```hcl showLineNumbers title="main.hcl" {1-12}
+```hcl showLineNumbers title="main.hcl" {1-14}
 resource "lab" "main" {
   title = "My Web Server Lab"
   description = "Learn web server basics by customizing an nginx homepage"
@@ -281,18 +281,7 @@ Save your complete, interactive lab:
 ```
 
 ```bash withOutput
-> git commit -m "Add interactive homepage customization activity
-> Content:
-> - Chapter structure with instructional page
-> - Step-by-step guide with context and troubleshooting
-> - Clear learning objectives and explanations
-> Tasks:
-> - Interactive validation for file modification
-> - Helpful error messages and hints
-> - Integration with container infrastructure
-> Scripts:
-> - Robust validation logic with clear feedback
-> - User-friendly success and failure messages"
+> git commit -m "Add interactive homepage customization activity"
 [main def9012] Add interactive homepage customization activity
  4 files changed, 127 insertions(+)
  create mode 100644 sandbox.hcl

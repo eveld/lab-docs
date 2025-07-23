@@ -47,8 +47,14 @@ nav,
 /* Custom styling for code blocks and terminals */
 .expressive-code {
   --ec-frm-shdClr: rgba(0, 0, 0, 0.3);
-  --ec-codeBg: #181c32;
+  --ec-codeBg: #1f2440;
   --ec-brdCol: #2a2f45;
+  --ec-frm-tabBarBg: #141829;
+  --ec-frm-tabBg: #141829;
+  --ec-frm-tabBgAct: #2a2f45;
+  --ec-frm-tabTxtCol: #e2e8f0;
+  --ec-frm-tabTxtColAct: #ffffff;
+  --ec-frm-trmTtbBg: #141829;
 }
 
 /* Override code block backgrounds to match our theme */
@@ -56,7 +62,137 @@ pre,
 code,
 .expressive-code pre,
 .ec-line {
-  background-color: #181c32 !important;
+  background-color: #1f2440 !important;
+}
+
+/* Add rounded corners and border/shadow to the entire code block */
+.expressive-code figure.frame {
+  border-radius: 8px !important;
+  overflow: hidden;
+  border: 1px solid #2a2f45 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Ensure code content has bottom rounded corners */
+.expressive-code pre {
+  border-radius: 0 0 8px 8px !important;
+}
+
+/* Aggressively remove ALL borders from expressive-code elements */
+.expressive-code *,
+.expressive-code *::before,
+.expressive-code *::after {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  --ec-brdWd: 0 !important;
+  --ec-frm-brdWd: 0 !important;
+}
+
+/* Restore highlighted code lines styling */
+.expressive-code .ec-line.highlight,
+.expressive-code .ec-line.mark {
+  background-color: rgba(102, 126, 234, 0.15) !important;
+  border-left: 3px solid #667eea !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right: none !important;
+  border-radius: 0 !important;
+}
+
+/* Highlighted text spans within code */
+.expressive-code .highlight,
+.expressive-code .mark {
+  background-color: rgba(102, 126, 234, 0.2) !important;
+  border-radius: 2px;
+  padding: 0.1em 0.2em;
+}
+
+/* Make output sections darker */
+.ec-line[data-output],
+.ec-line.output,
+.expressive-code .output {
+  background-color: #141829 !important;
+}
+
+/* Style all code block headers consistently */
+.expressive-code figcaption.header {
+  background-color: #141829 !important;
+  background: #141829 !important;
+  border-color: #2a2f45 !important;
+  border-bottom: 1px solid #2a2f45 !important;
+  position: relative;
+  border-radius: 8px 8px 0 0;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+/* Force non-terminal headers specifically */
+.expressive-code figure.frame.has-title:not([data-language="terminal"]) figcaption.header,
+.expressive-code figure.frame:not(.is-terminal) figcaption.header {
+  background-color: #141829 !important;
+  background: #141829 !important;
+}
+
+/* Ensure no other borders appear */
+.expressive-code figcaption.header *,
+.expressive-code figcaption.header *::before,
+.expressive-code figcaption.header *::after {
+  border-bottom: none !important;
+}
+
+/* Terminal blocks - simple title styling */
+
+.expressive-code figure.frame:not(.has-title) figcaption.header span.title,
+.expressive-code figure.frame[data-language="terminal"] figcaption.header span.title {
+  color: #e2e8f0 !important;
+  background: none !important;
+  border: none !important;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Single title in regular code blocks - simple styling */
+.expressive-code figure.frame.has-title:not([data-language="terminal"]) figcaption.header span.title:only-child {
+  color: #e2e8f0 !important;
+  background: none !important;
+  border: none !important;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Multiple titles in regular code blocks - show as tabs */
+.expressive-code figure.frame.has-title:not([data-language="terminal"]) figcaption.header span.title:not(:only-child) {
+  background-color: #1f2440 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #2a2f45;
+  border-bottom: none;
+  padding: 0.375rem 1rem;
+  border-radius: 4px 4px 0 0;
+  margin-right: 2px;
+}
+
+/* Active tab styling (only for multiple tabs) */
+.expressive-code figure.frame.has-title:not([data-language="terminal"]) figcaption.header span.title:not(:only-child)[aria-current="true"],
+.expressive-code figure.frame.has-title:not([data-language="terminal"]) figcaption.header span.title:not(:only-child).active {
+  background-color: #1f2440 !important;
+}
+
+/* Inactive tab styling (only for multiple tabs) */
+.expressive-code figure.frame.has-title:not([data-language="terminal"]) figcaption.header span.title:not(:only-child):not([aria-current="true"]):not(.active) {
+  background-color: #141829 !important;
+  color: #a0aec0 !important;
+}
+
+/* Remove all default Starlight borders from code block headers */
+.expressive-code .frame .header::after,
+.expressive-code .frame.has-title:not(.is-terminal) .title::after,
+.expressive-code .frame.is-terminal .header::after {
+  border: none !important;
+  border-bottom: none !important;
+  display: none !important;
 }
 
 /* Slightly different background for inline code */
@@ -65,6 +201,151 @@ code,
   color: #e2e8f0 !important;
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
+}
+
+/* Update callouts/notes to use Instruqt gradient colors */
+.starlight-aside--note {
+  --sl-color-asides-border: #667eea;
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+.starlight-aside--tip {
+  --sl-color-asides-border: #4facfe;
+  background-color: rgba(79, 172, 254, 0.1);
+}
+
+.starlight-aside--caution {
+  --sl-color-asides-border: #f093fb;
+  background-color: rgba(240, 147, 251, 0.1);
+}
+
+.starlight-aside--danger {
+  --sl-color-asides-border: #f093fb;
+  background-color: rgba(240, 147, 251, 0.1);
+}
+
+.starlight-aside {
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+/* Update callout title colors to match borders */
+.starlight-aside--note .starlight-aside__title {
+  color: #667eea;
+}
+
+.starlight-aside--tip .starlight-aside__title {
+  color: #4facfe;
+}
+
+.starlight-aside--caution .starlight-aside__title {
+  color: #f093fb;
+}
+
+.starlight-aside--danger .starlight-aside__title {
+  color: #f5576c;
+}
+
+/* Style FileTree component to match code blocks */
+starlight-file-tree {
+  background-color: #1f2440 !important;
+  border: 1px solid #2a2f45 !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+  display: block;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* File tree general text color */
+starlight-file-tree * {
+  color: #e2e8f0 !important;
+}
+
+/* Directory styling - targets directory class and first level items */
+starlight-file-tree .directory .tree-entry,
+starlight-file-tree li.directory > summary .tree-entry {
+  color: #4facfe !important;
+  font-weight: normal;
+}
+
+/* File styling */
+starlight-file-tree .file .tree-entry {
+  color: #e2e8f0 !important;
+}
+
+/* Comment/description styling */
+starlight-file-tree .comment {
+  color: #9ca3af !important;
+  font-style: italic;
+}
+
+/* SVG icon styling */
+starlight-file-tree .tree-icon {
+  fill: currentColor !important;
+}
+
+/* Directory icons - blue like directory names */
+starlight-file-tree .directory .tree-icon {
+  fill: #4facfe !important;
+}
+
+/* File icons - match file text color */
+starlight-file-tree .file .tree-icon {
+  fill: #e2e8f0 !important;
+}
+
+/* Hide theme switcher to force dark mode */
+starlight-theme-select,
+.theme-select,
+[data-theme-toggle] {
+  display: none !important;
+}
+
+/* Remove separator/border after social links when theme switcher is hidden */
+.social-icons::after,
+.header .social-icons + *,
+.header .social-icons + div {
+  display: none !important;
+}
+
+/* Remove any trailing borders in header */
+.header nav > *:last-child::after {
+  display: none !important;
+}
+
+/* Style search box to match code block output sections */
+.search-input,
+.search input,
+[data-search-input],
+.DocSearch-Input,
+[data-open-modal],
+button[data-open-modal] {
+  background-color: #141829 !important;
+  border-color: #2a2f45 !important;
+}
+
+/* Target search modal elements */
+.search-modal,
+.DocSearch-Modal,
+[role="dialog"] input[type="search"],
+dialog[aria-label="Search"],
+dialog[aria-label="Search"] .dialog-frame {
+  background-color: #141829 !important;
+  border-color: #2a2f45 !important;
+}
+
+/* Style search dialog backdrop/overlay */
+dialog[aria-label="Search"]::backdrop {
+  background-color: rgba(20, 24, 41, 0.8) !important;
+}
+
+/* Make Instruqt logo smaller */
+.site-title img,
+.header .site-title img {
+  height: 32px !important;
+  width: auto !important;
 }
 
 /* Style for Instruqt-specific components */
