@@ -539,7 +539,7 @@ sl-sidebar-state-persist {
 
 /* Mobile sidebar link hover state */
 .astro-3ii7xxms a:hover {
-  background-color: var(--sl-color-gray-6) !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
   color: var(--sl-color-text) !important;
 }
 
@@ -566,7 +566,7 @@ sl-sidebar-state-persist {
 }
 
 .astro-3ii7xxms summary:hover {
-  background-color: var(--sl-color-gray-6) !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
 }
 
 /* Mobile sidebar caret icons */
