@@ -447,3 +447,14 @@ nav[aria-labelledby="on-this-page-heading"] {
 .main-frame {
   padding-top: 0 !important;
 }
+
+/* Override Starlight flex utility to add max-width and centering */
+@layer starlight.utils {
+  @media (min-width: 72rem) {
+    .lg\:sl-flex {
+      display: flex;
+      max-width: 80rem !important;
+      margin: 0 auto !important;
+    }
+  }
+}
