@@ -487,3 +487,33 @@ nav[aria-labelledby="on-this-page-heading"] {
     }
   }
 }
+
+/* Fix mobile TOC dropdown visibility */
+details#starlight__mobile-toc .dropdown {
+  background-color: var(--sl-color-bg-nav) !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  margin-top: 0.5rem !important;
+  padding: 0.5rem !important;
+  z-index: 10 !important;
+}
+
+/* Ensure mobile TOC links are visible */
+details#starlight__mobile-toc .dropdown a {
+  color: var(--sl-color-text) !important;
+  display: block !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 0.25rem !important;
+  text-decoration: none !important;
+}
+
+/* Mobile TOC link hover/active states */
+details#starlight__mobile-toc .dropdown a:hover {
+  background-color: var(--sl-color-gray-6) !important;
+}
+
+details#starlight__mobile-toc .dropdown a[aria-current="true"] {
+  background-color: var(--sl-color-accent-low) !important;
+  color: var(--sl-color-accent-high) !important;
+}
