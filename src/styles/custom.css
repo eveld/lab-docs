@@ -6,6 +6,11 @@
   --sl-color-accent-low: #1e3a8a;
   --sl-color-accent: #3b82f6;
   --sl-color-accent-high: #dbeafe;
+  
+  /* Custom background color */
+  --sl-color-bg: #060e3d;
+  --sl-color-bg-nav: #060e3d;
+  --sl-color-bg-sidebar: #060e3d;
 }
 
 /* Custom styling for code blocks and terminals */
