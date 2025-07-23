@@ -229,7 +229,7 @@ resource "http" "api_call" {
   depends_on = [resource.http.health_check]
   
   method = "GET"
-  url = "http://localhost:8080/api/data"
+  url = "http://localhost:8080/reference/data"
   
   headers = {
     "Accept" = "application/json"

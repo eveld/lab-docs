@@ -102,7 +102,7 @@ resource "service" "app_ui" {
 resource "service" "app_api" {
   target = resource.container.multiservice
   port   = 8081
-  path   = "/api/v1"
+  path   = "/reference/v1"
 }
 ```
 
@@ -158,7 +158,7 @@ resource "container" "k8s_proxy" {
 resource "service" "k8s_dashboard" {
   target = resource.container.k8s_proxy
   port   = 8001
-  path   = "/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
+  path   = "/reference/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
 }
 ```
 

@@ -145,7 +145,7 @@ resource "template" "nginx_site" {
         try_files $uri $uri/ =404;
       }
       
-      location /api/ {
+      location /reference/ {
         proxy_pass http://{{api_host}}:{{api_port}};
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;

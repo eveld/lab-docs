@@ -128,7 +128,7 @@ resource "page" "welcome" {
 ```hcl
 resource "page" "configuration" {
   title = "API Configuration"
-  file  = "instructions/api/config.md"
+  file  = "instructions/reference/config.md"
   
   variables = {
     api_version = "v2"

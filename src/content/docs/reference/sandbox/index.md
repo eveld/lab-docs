@@ -10,43 +10,43 @@ The sandbox is the infrastructure environment where lab participants interact wi
 ### Containers
 Docker containers provide isolated environments for applications, tools, and services. They form the foundation of most lab sandboxes.
 
-- **[Container Resources](/api/resources/container/container/)** - Primary compute environments
-- **[Sidecar Containers](/api/resources/container/sidecar/)** - Supporting services and utilities
+- **[Container Resources](/reference/resources/container/container/)** - Primary compute environments
+- **[Sidecar Containers](/reference/resources/container/sidecar/)** - Supporting services and utilities
 
 ### Networking
 Network configuration enables connectivity between containers and external access to services.
 
-- **[Network Resources](/api/resources/network/network/)** - Container networking
-- **[Ingress Resources](/api/resources/ingress/ingress/)** - External access and load balancing
+- **[Network Resources](/reference/resources/network/network/)** - Container networking
+- **[Ingress Resources](/reference/resources/ingress/ingress/)** - External access and load balancing
 
 ### Storage & Files
 File management and data persistence across lab sessions.
 
-- **[Copy Resources](/api/resources/copy/copy/)** - File provisioning
-- **[Template Resources](/api/resources/template/template/)** - Dynamic file generation
+- **[Copy Resources](/reference/resources/copy/copy/)** - File provisioning
+- **[Template Resources](/reference/resources/template/template/)** - Dynamic file generation
 
 ### Orchestration
 Container orchestration platforms for complex multi-service environments.
 
-- **[Kubernetes](/api/resources/k8s/cluster/)** - Container orchestration
-- **[Nomad](/api/resources/nomad/nomadcluster/)** - Alternative orchestration
+- **[Kubernetes](/reference/resources/k8s/cluster/)** - Container orchestration
+- **[Nomad](/reference/resources/nomad/nomadcluster/)** - Alternative orchestration
 
 ## Cloud Provider Integration
 
 ### Multi-Cloud Support
 Integration with major cloud platforms for realistic production environments.
 
-- **[AWS Integration](/api/resources/aws/account/)** - Amazon Web Services
-- **[Azure Integration](/api/resources/azure/subscription/)** - Microsoft Azure  
-- **[Google Cloud Integration](/api/resources/google/project/)** - Google Cloud Platform
+- **[AWS Integration](/reference/resources/aws/account/)** - Amazon Web Services
+- **[Azure Integration](/reference/resources/azure/subscription/)** - Microsoft Azure  
+- **[Google Cloud Integration](/reference/resources/google/project/)** - Google Cloud Platform
 
 ## Security & Certificates
 
 ### Certificate Management
 SSL/TLS certificates for secure communication and authentication.
 
-- **[Certificate Authority](/api/resources/cert/certificateca/)** - Root certificate creation
-- **[Leaf Certificates](/api/resources/cert/certificateleaf/)** - Service certificates
+- **[Certificate Authority](/reference/resources/cert/certificateca/)** - Root certificate creation
+- **[Leaf Certificates](/reference/resources/cert/certificateleaf/)** - Service certificates
 
 ## Best Practices
 
