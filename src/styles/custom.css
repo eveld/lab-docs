@@ -47,6 +47,24 @@ nav,
 /* Custom styling for code blocks and terminals */
 .expressive-code {
   --ec-frm-shdClr: rgba(0, 0, 0, 0.3);
+  --ec-codeBg: #181c32;
+  --ec-brdCol: #2a2f45;
+}
+
+/* Override code block backgrounds to match our theme */
+pre,
+code,
+.expressive-code pre,
+.ec-line {
+  background-color: #181c32 !important;
+}
+
+/* Slightly different background for inline code */
+:not(pre) > code {
+  background-color: #2a2f45 !important;
+  color: #e2e8f0 !important;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
 }
 
 /* Style for Instruqt-specific components */
