@@ -14,8 +14,16 @@
 }
 
 /* Add Instruqt-style gradient border to navigation */
-.header {
+.header,
+[data-astro-cid-starlight] .header,
+.sl-nav,
+.site-title,
+header {
   border-bottom: none !important;
+  border: none !important;
+}
+
+.header {
   position: relative;
 }
 
@@ -29,9 +37,12 @@
   background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
 }
 
-/* Also remove any potential border from the main nav element */
-nav {
+/* Remove all potential navigation borders */
+nav,
+.sl-nav,
+.site-title {
   border: none !important;
+  border-bottom: none !important;
 }
 
 /* Custom styling for code blocks and terminals */
