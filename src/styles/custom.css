@@ -8,9 +8,9 @@
   --sl-color-accent-high: #dbeafe;
   
   /* Custom background color */
-  --sl-color-bg: #060e3d;
-  --sl-color-bg-nav: #060e3d;
-  --sl-color-bg-sidebar: #060e3d;
+  --sl-color-bg: #181c32;
+  --sl-color-bg-nav: #181c32;
+  --sl-color-bg-sidebar: #181c32;
 }
 
 /* Custom styling for code blocks and terminals */
