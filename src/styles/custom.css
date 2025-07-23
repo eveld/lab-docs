@@ -13,6 +13,16 @@
   --sl-color-bg-sidebar: #181c32;
 }
 
+/* Remove navigation border */
+.header {
+  border-bottom: none !important;
+}
+
+/* Also remove any potential border from the main nav element */
+nav {
+  border: none !important;
+}
+
 /* Custom styling for code blocks and terminals */
 .expressive-code {
   --ec-frm-shdClr: rgba(0, 0, 0, 0.3);
