@@ -436,7 +436,14 @@ nav[aria-labelledby="on-this-page-heading"] {
   margin-bottom: 1rem !important;
 }
 
-/* Fix main content padding - remove excessive top padding */
+/* Remove all top padding from main content frame */
+@layer starlight.core {
+  .main-frame:where(.astro-vrdttmbt) {
+    padding-top: 0 !important;
+    padding-inline-start: var(--sl-content-inline-start);
+  }
+}
+
 .main-frame {
-  padding-top: var(--sl-nav-height) !important;
+  padding-top: 0 !important;
 }
