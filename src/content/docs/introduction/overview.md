@@ -3,7 +3,7 @@ title: Overview
 description: Introduction to Instruqt's lab platform and documentation structure
 ---
 
-# Instruqt Lab Platform Overview
+## Instruqt Lab Platform Overview
 
 Welcome to the Instruqt lab platform documentation. This guide covers everything you need to know about creating, configuring, and managing interactive learning experiences using Instruqt's next-generation HCL-based lab format.
 

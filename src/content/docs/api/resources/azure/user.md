@@ -1,0 +1,107 @@
+---
+title: User
+description: Configuration reference for the azure resource in Instruqt labs
+---
+
+
+## User
+
+Azure User
+
+```hcl
+
+resource "azure_subscription" "name" {
+user "name" {
+  ...
+}
+}
+
+```
+
+#### Attributes
+
+<table border="0" width="100%">
+<tr>
+  <th>Attribute</th>
+  <th>Description</th>
+</tr>
+<tr id="user-name">
+  <td class="left" width="40%" align="left" valign="top">
+    <strong>Name</strong> <code>name</code> <em>required</em><br/><br/><br/>
+    type: <code>string</code><br/>
+    
+  </td>
+  <td class="right" width="60%" align="left" valign="top">
+    The username of the user.
+
+```hcl
+user "username" {
+  ...
+}
+```
+    
+  </td>
+</tr>
+<tr id="user-roles">
+  <td class="left" width="40%" align="left" valign="top">
+    <strong>Roles</strong> <code>roles</code> <br/><br/>
+    type: <code>[]string</code><br/>
+    
+  </td>
+  <td class="right" width="60%" align="left" valign="top">
+    The roles that will be assigned to the user.
+
+```hcl
+roles = ["Owner"]
+```
+    
+  </td>
+</tr>
+<tr id="user-user_id">
+  <td class="left" width="40%" align="left" valign="top">
+    <strong>UserID</strong> <code>user_id</code> <br/><br/>
+    type: <code>string</code><br/>
+    
+  </td>
+  <td class="right" width="60%" align="left" valign="top">
+    Output parameters
+    
+  </td>
+</tr>
+<tr id="user-username">
+  <td class="left" width="40%" align="left" valign="top">
+    <strong>Username</strong> <code>username</code> <br/><br/>
+    type: <code>string</code><br/>
+    
+  </td>
+  <td class="right" width="60%" align="left" valign="top">
+    
+    
+  </td>
+</tr>
+<tr id="user-password">
+  <td class="left" width="40%" align="left" valign="top">
+    <strong>Password</strong> <code>password</code> <br/><br/>
+    type: <code>string</code><br/>
+    
+  </td>
+  <td class="right" width="60%" align="left" valign="top">
+    
+    
+  </td>
+</tr>
+</table>
+
+#### Computed Attributes
+
+These attributes are computed when the config is parsed and applied, and are 
+therefore only known at parsetime or runtime.
+
+<table border="0" width="100%">
+<tr>
+  <th>Attribute</th>
+  <th>Description</th>
+</tr>
+
+</table>
+

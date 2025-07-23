@@ -3,8 +3,6 @@ title: Testing & Validation
 description: Testing and validating Instruqt labs before deployment
 ---
 
-# Testing & Validation
-
 Proper testing ensures your lab works correctly for learners.
 
 ## Validation Commands

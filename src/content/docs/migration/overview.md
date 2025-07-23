@@ -3,7 +3,7 @@ title: Legacy to HCL Migration
 description: Guide for migrating from legacy YAML track format to new HCL lab format
 ---
 
-# Migrating from Legacy YAML to HCL Format
+## Migrating from Legacy YAML to HCL Format
 
 This guide covers the process of migrating existing Instruqt tracks from the legacy YAML format to the new HCL-based lab format.
 

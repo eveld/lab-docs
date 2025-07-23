@@ -3,8 +3,6 @@ title: Interactive Tasks
 description: Creating interactive tasks and validation scripts for labs
 ---
 
-# Interactive Tasks
-
 Tasks provide interactive elements that guide learners through hands-on activities.
 
 ## Task Types

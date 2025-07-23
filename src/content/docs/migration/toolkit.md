@@ -3,8 +3,6 @@ title: Migration Toolkit
 description: Using the migration toolkit to convert legacy YAML tracks to HCL format
 ---
 
-# Migration Toolkit
-
 The migration toolkit provides automated conversion from legacy YAML track format to the new HCL lab format.
 
 ## Installation

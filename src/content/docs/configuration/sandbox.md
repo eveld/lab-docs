@@ -3,8 +3,6 @@ title: Sandbox Resources
 description: Configuring infrastructure and sandbox environments for labs
 ---
 
-# Sandbox Resources
-
 Sandbox resources define the infrastructure and runtime environment for your lab.
 
 ## Container Resources

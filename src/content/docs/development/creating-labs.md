@@ -3,8 +3,6 @@ title: Creating Labs
 description: Step-by-step guide to creating new Instruqt labs
 ---
 
-# Creating Labs
-
 This guide walks through the process of creating a new Instruqt lab from scratch.
 
 ## Lab Creation Workflow
