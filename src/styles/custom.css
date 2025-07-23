@@ -492,3 +492,69 @@ nav[aria-labelledby="on-this-page-heading"] {
 details#starlight__mobile-toc {
   display: none !important;
 }
+
+/* Style mobile sidebar navigation */
+.astro-3ii7xxms.top-level {
+  background-color: var(--sl-color-bg-sidebar) !important;
+}
+
+/* Mobile sidebar links */
+.astro-3ii7xxms a {
+  color: var(--sl-color-text) !important;
+  text-decoration: none !important;
+  padding: 0.5rem 1rem !important;
+  display: block !important;
+  border-radius: 0.25rem !important;
+  margin: 0.125rem 0 !important;
+}
+
+/* Mobile sidebar link hover state */
+.astro-3ii7xxms a:hover {
+  background-color: var(--sl-color-gray-6) !important;
+  color: var(--sl-color-text) !important;
+}
+
+/* Current page in mobile sidebar */
+.astro-3ii7xxms a[aria-current="page"],
+.astro-3ii7xxms a[aria-current="true"] {
+  background-color: var(--sl-color-accent-low) !important;
+  color: var(--sl-color-accent-high) !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile sidebar group labels */
+.astro-3ii7xxms .group-label span {
+  color: var(--sl-color-text) !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile sidebar summary/details styling */
+.astro-3ii7xxms summary {
+  padding: 0.75rem 1rem !important;
+  cursor: pointer !important;
+  border-radius: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.astro-3ii7xxms summary:hover {
+  background-color: var(--sl-color-gray-6) !important;
+}
+
+/* Mobile sidebar caret icons */
+.astro-3ii7xxms .caret {
+  color: var(--sl-color-text-accent) !important;
+}
+
+/* Mobile sidebar nested lists */
+.astro-3ii7xxms ul {
+  border-left: 1px solid var(--sl-color-hairline-shade) !important;
+  margin-left: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+/* Top level list - no border */
+.astro-3ii7xxms.top-level {
+  border-left: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
