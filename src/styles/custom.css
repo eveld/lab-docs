@@ -340,8 +340,7 @@ button[data-open-modal],
 button[aria-label="Search"],
 .search-button {
   background-color: #141829 !important;
-  border-color: #2a2f45 !important;
-  border: 1px solid #2a2f45 !important;
+  border: none !important;
 }
 
 /* Target search modal elements */
