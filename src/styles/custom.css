@@ -411,6 +411,7 @@ dialog[aria-label="Search"]::backdrop {
 .right-sidebar-panel,
 nav[aria-labelledby="on-this-page-heading"] {
   padding-top: 1rem !important;
+  background-color: #181c32 !important;
 }
 
 /* Add space above the "On this page" heading specifically */
@@ -418,6 +419,11 @@ nav[aria-labelledby="on-this-page-heading"] {
 .right-sidebar-panel h2,
 #on-this-page-heading {
   padding-top: 1rem !important;
+}
+
+/* Right sidebar background */
+.right-sidebar {
+  background-color: #181c32 !important;
 }
 
 /* Add space above left sidebar navigation content */
