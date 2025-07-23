@@ -395,7 +395,6 @@ dialog[aria-label="Search"]::backdrop {
 /* Add space above "On this page" section */
 .right-sidebar-panel,
 nav[aria-labelledby="on-this-page-heading"] {
-  margin-top: 2rem !important;
   padding-top: 1rem !important;
 }
 
