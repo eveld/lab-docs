@@ -5,16 +5,11 @@ description: Build the container infrastructure and networking for your lab
 
 import { FileTree } from '@astrojs/starlight/components';
 
-Build the container infrastructure that users will interact with. We'll add a `sandbox.hcl` file to define the infrastructure resources - containers, networks, and services.
+WIP
 
 ## Resource Chaining
 
-Resources reference each other to build connected infrastructure:
-
-- Networks provide connectivity
-- Containers connect to networks 
-- Services expose container functionality
-- Terminals provide container access
+WIP
 
 ## Create the Infrastructure Configuration
 
@@ -27,7 +22,7 @@ resource "network" "main" {
 }
 ```
 
-The network provides isolated communication between containers. The subnet `10.0.200.0/24` provides 254 IP addresses (10.0.200.1 to 10.0.200.254).
+WIP
 
 ## Add the Web Server Container
 
@@ -56,12 +51,7 @@ resource "container" "webserver" {
 }
 ```
 
-Key concepts:
-
-- **Image**: Official nginx 1.25 container
-- **Port mapping**: Exposes container port 80
-- **Network reference**: `resource.network.main.meta.id` connects to the network
-- **Resource chaining**: Container references the network resource
+WIP
 
 ## Create User Interface Elements
 
@@ -82,27 +72,11 @@ resource "terminal" "shell" {
 }
 ```
 
-Tab definitions:
-
-- **Service tab**: Web browser panel showing the nginx homepage
-- **Terminal tab**: Command-line access to the container
-- **Target references**: Both reference the same container
+WIP
 
 ## Visualize the Resource Relationships
 
-Your infrastructure now has these connections:
-
-```mermaid
-graph TD
-    A[network.main<br/>10.0.200.0/24] --> B[container.webserver<br/>nginx:1.25]
-    B --> C[service.webserver<br/>HTTP on port 80]
-    B --> D[terminal.shell<br/>Bash access]
-    
-    style A fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#01579b
-    style B fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
-    style C fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#1b5e20
-    style D fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#e65100
-```
+WIP
 
 ## Validate Your Infrastructure
 
@@ -112,12 +86,7 @@ Test that your configuration is syntactically correct:
 instruqt lab validate
 ```
 
-If the command reports errors:
-- Read the error message - it will tell you exactly what's wrong
-- Common issues:
-  - Unclosed braces `{}`
-  - Invalid resource references (check exact format: `resource.type.name.meta.id`)
-  - Mixed tabs and spaces in indentation
+WIP
 
 ## Commit Your Infrastructure
 
@@ -140,22 +109,9 @@ Save your progress to version control:
 
 ## What You've Built
 
-- Network with 10.0.200.0/24 subnet for container communication
-- nginx web server container connected to the network
-- Service tab exposing the web server on port 80
-- Terminal tab providing bash shell access to the container
-- Resource chaining connecting network → container → services
-
-
+WIP
 
 ## What's Next
 
-With solid infrastructure in place, you're ready to add interactivity. In the next step, you'll:
-
-- Create challenges that users must complete
-- Add validation scripts that check progress automatically
-- Build content that guides users through the learning experience
-- Connect tasks to your infrastructure components
-
-The infrastructure you've built provides the foundation for rich, interactive learning experiences.
+WIP
 

@@ -3,14 +3,11 @@ title: Interactive Tasks
 description: Creating interactive tasks and validation scripts for labs
 ---
 
-Tasks provide interactive elements that guide learners through hands-on activities.
+WIP
 
 ## Task Types
 
-- **Validation Tasks**: Check that learners completed specific actions
-- **Quiz Tasks**: Multiple choice or fill-in-the-blank questions
-- **Code Tasks**: Code editing and execution challenges
-- **File Tasks**: File manipulation and configuration tasks
+WIP
 
 ## Creating Validation Tasks
 
@@ -46,4 +43,4 @@ else
 fi
 ```
 
-Content coming soon...
+WIP

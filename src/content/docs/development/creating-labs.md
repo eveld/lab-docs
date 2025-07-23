@@ -3,17 +3,11 @@ title: Creating Labs
 description: Step-by-step guide to creating new Instruqt labs
 ---
 
-This guide walks through the process of creating a new Instruqt lab from scratch.
+WIP
 
 ## Lab Creation Workflow
 
-1. **Initialize Project**
-2. **Configure Lab Resources**
-3. **Set Up Sandbox Environment** 
-4. **Create Content Structure**
-5. **Add Interactive Tasks**
-6. **Test and Validate**
-7. **Deploy**
+WIP
 
 ## Step 1: Initialize Project
 
@@ -45,4 +39,4 @@ resource "lab" "my_new_lab" {
 }
 ```
 
-Content coming soon...
+WIP

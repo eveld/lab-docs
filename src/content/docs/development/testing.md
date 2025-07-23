@@ -3,7 +3,7 @@ title: Testing & Validation
 description: Testing and validating Instruqt labs before deployment
 ---
 
-Proper testing ensures your lab works correctly for learners.
+WIP
 
 ## Validation Commands
 
@@ -20,28 +20,15 @@ instruqt lab start --local
 
 ## Testing Checklist
 
-- [ ] All HCL files validate without errors
-- [ ] Sandbox resources start correctly
-- [ ] Task validation scripts work as expected
-- [ ] Content renders properly
-- [ ] Interactive components function correctly
-- [ ] Lab completes end-to-end successfully
+WIP
 
 ## Common Issues
 
 ### Configuration Errors
-- Missing resource references
-- Invalid HCL syntax
-- Incorrect file paths
+WIP
 
 ### Runtime Issues
-- Resource startup failures
-- Script permission problems
-- Network connectivity issues
+WIP
 
 ### Content Problems
-- Broken links or references
-- Missing instruction files
-- Invalid markdown syntax
-
-Content coming soon...
+WIP

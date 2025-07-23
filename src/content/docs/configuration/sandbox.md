@@ -3,7 +3,7 @@ title: Sandbox Resources
 description: Configuring infrastructure and sandbox environments for labs
 ---
 
-Sandbox resources define the infrastructure and runtime environment for your lab.
+WIP
 
 ## Container Resources
 
@@ -39,11 +39,4 @@ resource "virtual_machine" "server" {
 
 ## Cloud Provider Integration
 
-Labs can integrate with major cloud providers:
-
-- AWS accounts and resources
-- Google Cloud projects
-- Azure subscriptions
-- Kubernetes clusters
-
-Content coming soon...
+WIP
