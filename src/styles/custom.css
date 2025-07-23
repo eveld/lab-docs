@@ -574,11 +574,18 @@ sl-sidebar-state-persist {
   color: var(--sl-color-text-accent) !important;
 }
 
-/* Mobile sidebar nested lists */
-.astro-3ii7xxms ul {
+/* Mobile sidebar nested lists - only add border to nested ul elements */
+.astro-3ii7xxms details ul {
   border-left: 1px solid var(--sl-color-hairline-shade) !important;
   margin-left: 1rem !important;
   padding-left: 1rem !important;
+}
+
+/* Remove double borders from deeply nested lists */
+.astro-3ii7xxms details details ul {
+  border-left: none !important;
+  margin-left: 0.5rem !important;
+  padding-left: 0.5rem !important;
 }
 
 /* Top level list - no border */
