@@ -1,0 +1,57 @@
+---
+title: Lab Structure
+description: Understanding the structure and organization of Instruqt labs
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+# Lab Structure
+
+This page covers the structure and organization of Instruqt labs using the HCL format.
+
+## Core Configuration Files
+
+Every lab consists of several core HCL configuration files:
+
+- **`lab.hcl`** - Main lab resource definition
+- **`sandbox.hcl`** - Infrastructure and sandbox resources  
+- `chapters.hcl` - Content organization and structure
+- `tasks.hcl` - Interactive activities and validation
+- `tabs.hcl` - User interface configuration
+
+## Directory Structure
+
+<FileTree>
+- my-lab/
+  - lab.hcl Main lab configuration
+  - sandbox.hcl Infrastructure resources
+  - chapters.hcl Content organization
+  - tasks.hcl Interactive activities
+  - tabs.hcl UI configuration
+  - instructions/ Markdown content files
+    - chapter-1/
+      - page-1.md
+      - page-2.md
+    - chapter-2/
+      - page-1.md
+  - scripts/ Task validation scripts
+    - task-1/
+      - check.sh Validation script
+      - solve.sh Solution script
+    - task-2/
+      - check.sh
+  - assets/ Images and media files
+  - files/ Configuration files and templates
+</FileTree>
+
+## Resource Relationships
+
+Lab resources are interconnected through references:
+
+1. **Lab** references chapters and defines overall structure
+2. **Chapters** contain pages and define content flow
+3. **Pages** reference tasks and instruction content
+4. **Tasks** reference validation scripts and activities
+5. **Sandbox** resources provide the runtime environment
+
+This structure provides clear separation of concerns while maintaining flexibility for complex lab scenarios.

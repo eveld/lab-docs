@@ -1,0 +1,83 @@
+
+> lab-docs-v2@0.0.1 build
+> astro build
+
+09:39:02 [content] Syncing content
+09:39:02 [content] Synced content
+09:39:02 [types] Generated 258ms
+09:39:02 [build] output: "static"
+09:39:02 [build] mode: "static"
+09:39:02 [build] directory: /Users/erik/code/instruqt/lab-docs-v2/dist/
+09:39:02 [build] Collecting build info...
+09:39:02 [build] ✓ Completed in 332ms.
+09:39:02 [build] Building static entrypoints...
+09:39:03 [vite] ✓ built in 659ms
+09:39:03 [build] ✓ Completed in 677ms.
+
+ building client (vite) 
+09:39:03 [vite] transforming...
+09:39:03 [vite] ✓ 17 modules transformed.
+09:39:03 [vite] rendering chunks...
+09:39:03 [vite] computing gzip size...
+09:39:03 [vite] dist/_astro/ec.p1z7b.js                                                              2.48 kB
+09:39:03 [vite] dist/_astro/ec.v4551.css                                                            18.22 kB │ gzip:  3.94 kB
+09:39:03 [vite] dist/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js   0.67 kB │ gzip:  0.40 kB
+09:39:03 [vite] dist/_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js         1.67 kB │ gzip:  0.87 kB
+09:39:03 [vite] dist/_astro/page.7qqag-5g.js                                                         2.17 kB │ gzip:  0.97 kB
+09:39:03 [vite] dist/_astro/Search.astro_astro_type_script_index_0_lang.DMZ5WJ-J.js                  2.69 kB │ gzip:  1.39 kB
+09:39:03 [vite] dist/_astro/ui-core.Ft0Z9wO7.js                                                     68.07 kB │ gzip: 21.34 kB
+09:39:03 [vite] ✓ built in 92ms
+
+ generating static routes 
+09:39:03 ▶ @astrojs/starlight/routes/static/404.astro
+09:39:03   └─ /404.htmlEntry docs → 404 was not found.
+ (+9ms) 
+09:39:03 ▶ @astrojs/starlight/routes/static/index.astro
+09:39:03   ├─ /index.html (+5ms) 
+09:39:03   ├─ /introduction/overview/index.html (+3ms) 
+09:39:03   ├─ /migration/overview/index.html (+3ms) 
+09:39:03   ├─ /introduction/getting-started/index.html (+2ms) 
+09:39:03   ├─ /api/index.html (+3ms) 
+09:39:03   ├─ /configuration/content/index.html (+3ms) 
+09:39:03   ├─ /configuration/lab-structure/index.html (+15ms) 
+09:39:03   ├─ /configuration/sandbox/index.html (+3ms) 
+09:39:03   ├─ /development/creating-labs/index.html (+3ms) 
+09:39:03   ├─ /development/testing/index.html (+2ms) 
+09:39:03   ├─ /development/tasks/index.html (+2ms) 
+09:39:03   └─ /migration/toolkit/index.html (+2ms) 
+09:39:03 ✓ Completed in 84ms.
+
+ generating optimized images 
+09:39:03   ▶ /_astro/houston.CZZyCf7p_Z2wV2f.webp (reused cache entry) (+1ms) (1/1)
+09:39:03 ✓ Completed in 1ms.
+
+(node:10363) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Running Pagefind v1.3.0 (Extended)
+Running from: "/Users/erik/code/instruqt/lab-docs-v2/node_modules/@astrojs/starlight"
+Source:       "../../../dist"
+Output:       "../../../dist/pagefind"
+
+[Walking source directory]
+Found 13 files matching **/*.{html}
+
+[Parsing files]
+Found a data-pagefind-body element on the site.
+↳ Ignoring pages without this tag.
+
+[Reading languages]
+Discovered 1 language: en
+
+[Building search indexes]
+Total: 
+  Indexed 1 language
+  Indexed 12 pages
+  Indexed 471 words
+  Indexed 0 filters
+  Indexed 0 sorts
+
+Finished in 0.119 seconds
+09:39:03 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+09:39:03 [build] 13 page(s) built in 1.85s
+09:39:03 [build] Complete!

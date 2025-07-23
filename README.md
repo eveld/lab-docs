@@ -1,17 +1,18 @@
-# Starlight Starter Kit: Basics
+# Instruqt Lab Documentation
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-```
-npm create astro@latest -- --template starlight
-```
+This is the official documentation site for Instruqt's lab platform, built with Astro Starlight. It provides comprehensive guides for creating, configuring, and managing interactive learning experiences using Instruqt's HCL-based lab format.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+## About This Documentation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This documentation covers:
+
+- **Introduction**: Getting started with Instruqt labs and core concepts
+- **Lab Configuration**: Defining lab resources, sandbox environments, and infrastructure
+- **Development Guide**: Creating content, interactive tasks, and validation scripts
+- **Migration Tools**: Converting from legacy YAML tracks to new HCL format
+- **API Reference**: Complete reference for all lab configuration options
 
 ## 🚀 Project Structure
 

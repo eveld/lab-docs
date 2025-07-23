@@ -1,0 +1,43 @@
+---
+title: Content Organization
+description: Organizing and structuring lab content and instructions
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+# Content Organization
+
+This guide covers how to organize and structure content for your Instruqt labs.
+
+## Chapter and Page Structure
+
+Content is organized hierarchically:
+
+1. **Labs** contain multiple chapters
+2. **Chapters** contain multiple pages
+3. **Pages** contain instruction content and may include tasks
+
+## Instruction Files
+
+Instruction content is stored as Markdown files in the `instructions/` directory:
+
+<FileTree>
+- instructions/
+  - introduction/
+    - welcome.md First page users see
+    - setup.md Environment setup
+  - hands-on/
+    - first-steps.md Basic tasks
+    - advanced.md Complex scenarios
+</FileTree>
+
+## Interactive Components
+
+Use Instruqt-specific components to enhance content:
+
+- `<instruqt-task id="task-id">` - Task activities
+- `<instruqt-code language="bash">` - Syntax-highlighted code
+- `<instruqt-link to="...">` - Styled links
+- `<instruqt-button to="...">` - Interactive buttons
+
+Content coming soon...

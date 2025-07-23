@@ -1,36 +1,46 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Instruqt Lab Documentation
+description: Complete guide to creating, configuring, and managing Instruqt labs with the new HCL format.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Build interactive learning experiences with Instruqt's next-generation lab platform
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /getting-started/overview/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: View Lab Examples
+      link: /development/creating-labs/
+      icon: document
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## What you'll learn
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Lab Configuration" icon="setting">
+		Learn the new HCL-based lab format and how to structure your lab resources, sandbox environments, and content.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Interactive Development" icon="puzzle">
+		Create engaging learning experiences with tasks, quizzes, and interactive components that guide learners through hands-on exercises.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Migration Tools" icon="rocket">
+		Migrate from legacy YAML track formats to the new HCL lab format using automated migration tools and best practices.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Best Practices" icon="approve-check">
+		Follow proven patterns for content organization, script management, and deployment workflows that scale with your team.
 	</Card>
 </CardGrid>
+
+## Key Features
+
+The new Instruqt lab format provides:
+
+- **Resource-based Configuration**: Define labs, sandboxes, tasks, and content as discrete HCL resources
+- **Structured Content Organization**: Organize instructions, scripts, and assets in logical directory hierarchies  
+- **Advanced Interactivity**: Create tasks with validation scripts, quizzes, and interactive UI components
+- **Flexible Layouts**: Configure multi-panel interfaces with terminals, editors, browsers, and custom tabs
+- **Migration Support**: Automated tools to convert legacy YAML tracks to the new HCL format

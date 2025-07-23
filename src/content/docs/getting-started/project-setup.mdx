@@ -1,0 +1,198 @@
+---
+title: Step 1 - Project Setup
+description: Initialize your lab project and create a GitHub repository
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+Initialize a new Instruqt lab and set up version control. This creates the foundation for everything else.
+
+## Understanding Lab Initialization
+
+When you initialize a new lab, the Instruqt CLI creates a structured directory with all the essential files your lab needs. Think of this like scaffolding for a building - it provides the framework that supports everything you'll add later.
+
+The CLI can generate labs from templates or create empty structures. For learning purposes, we'll start with the skeleton template which provides the basic directory structure, then build up the infrastructure and content step by step to understand how each piece works.
+
+## Initialize Your Lab
+
+Create a new lab using the Instruqt CLI and select the skeleton template:
+
+```bash withOutput title="Initialize Lab from Skeleton Template"
+> instruqt lab init
+? Lab title: My Web Server Lab
+? Select a template: skeleton
+? Target directory (./my-web-server-lab): 
+[OK] Lab created successfully at ./my-web-server-lab
+```
+
+## Explore the Generated Structure
+
+Open your new lab in VS Code to examine what was created:
+
+```bash
+cd my-web-server-lab
+code .
+```
+
+:::note[If `code .` doesn't work]
+On macOS, if VS Code was installed via download (not Homebrew), you need to install the command line tools:
+1. Open VS Code
+2. Press `Cmd+Shift+P` to open the command palette
+3. Type "Shell Command: Install 'code' command in PATH"
+4. Select it and restart your terminal
+
+Alternatively, you can drag the `my-web-server-lab` folder onto the VS Code icon in your dock.
+:::
+
+This opens VS Code with your lab directory. The directory structure looks like this:
+
+<FileTree>
+- my-web-server-lab/
+  - main.hcl Main lab configuration and metadata
+  - layouts.hcl UI layout definitions for panels and tabs
+  - assets/ Images, videos, and other media files
+  - files/ Configuration files and templates
+  - instructions/ Markdown content files
+  - notes/ Note tab content
+  - scripts/ Validation and setup scripts
+  - README.md Template documentation
+</FileTree>
+
+## Understanding the Core Files
+
+Let's examine what each core file does:
+
+**`main.hcl`** - The main configuration file that defines your lab's identity:
+- Lab title, description, and metadata
+- Layout references for the user interface
+- Content organization structure
+
+**`layouts.hcl`** - Your user interface definition:
+- Panel and column arrangements
+- Tab configurations (terminal, browser, editor)
+- Layout references used by the lab
+
+**Directory structure:**
+- **`instructions/`** - Markdown files with step-by-step guides
+- **`scripts/`** - Validation and setup scripts
+- **`assets/`** - Images, diagrams, and media files
+- **`files/`** - Configuration files and templates
+
+In VS Code, open `main.hcl` to understand the structure. You'll see a minimal lab configuration with title, description, and a single-column layout reference.
+
+## Set Up Version Control
+
+Professional lab development requires version control. Create a GitHub repository for your lab:
+
+### Create GitHub Repository
+
+Create a new repository on GitHub:
+
+1. Go to [github.com/new](https://github.com/new)
+2. **Repository name:** `my-web-server-lab`
+3. **Visibility:** Choose Public (recommended) or Private
+4. **Important:** Leave all checkboxes unchecked (no README, .gitignore, or license)
+5. Click "Create repository"
+
+GitHub will show you the setup commands - keep this page open for the next step.
+
+:::caution[Critical Step]
+Don't initialize the repository with any files. The Instruqt CLI has already created the structure you need. Adding a README now will cause merge conflicts later.
+:::
+
+### Initialize Git and Push
+
+Use VS Code's integrated terminal (View → Terminal) or run these commands in your terminal. Replace `YOUR-USERNAME` with your actual GitHub username:
+
+```bash withOutput
+> git init
+Initialized empty Git repository in /path/to/my-web-server-lab/.git/
+```
+
+```bash withOutput
+> git branch -m main
+```
+
+```bash withOutput
+> git add .
+```
+
+```bash withOutput
+> git commit -m "Initial lab structure from Instruqt template"
+[main (root-commit) abc1234] Initial lab structure from Instruqt template
+ 8 files changed, 42 insertions(+)
+ create mode 100644 lab.hcl
+ create mode 100644 sandbox.hcl
+ create mode 100644 main.hcl
+ create mode 100644 layouts.hcl
+```
+
+```bash withOutput
+> git remote add origin git@github.com:YOUR-USERNAME/my-web-server-lab.git
+```
+
+```bash withOutput
+> git push -u origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1.2 KiB | 1.2 MiB/s, done.
+To github.com:YOUR-USERNAME/my-web-server-lab.git
+ * [new branch]      main -> main
+```
+
+## Verify Your Setup
+
+Confirm everything is working correctly:
+
+```bash withOutput
+> pwd
+/path/to/my-web-server-lab
+```
+
+```bash withOutput
+> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
+```bash withOutput
+> git remote -v
+origin  git@github.com:YOUR-USERNAME/my-web-server-lab.git (fetch)
+origin  git@github.com:YOUR-USERNAME/my-web-server-lab.git (push)
+```
+
+## What You've Built
+
+- Lab project structure with all necessary HCL files
+- Git repository with GitHub integration
+- VS Code workspace ready for development
+- Foundation for adding infrastructure and content
+
+## What's Next
+
+With your project structure in place, you'll build the actual infrastructure:
+
+- Container-based web server with nginx
+- Network configuration for container communication
+- User interface tabs (terminal and service browser)
+- Resource relationships and chaining patterns
+
+## Troubleshooting
+
+**"git push" fails with authentication error:**
+- Ensure your SSH key is added to GitHub
+- Test SSH connection: `ssh -T git@github.com`
+- Alternative: Use HTTPS URL instead of SSH
+
+**"instruqt lab init" command not found:**
+- Install the Instruqt CLI from the documentation
+- Verify installation: `instruqt --version`
+
+**Directory already exists error:**
+- Choose a different directory name
+- Remove existing directory: `rm -rf my-web-server-lab`
+
+---
+
+**Next:** [Step 2 - Infrastructure Setup](./infrastructure) →

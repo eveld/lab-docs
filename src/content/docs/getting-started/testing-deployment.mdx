@@ -1,0 +1,126 @@
+---
+title: Step 4 - Testing & Deployment
+description: Validate your complete lab and deploy it to the Instruqt platform
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+Test your complete lab and deploy it to the Instruqt platform.
+
+## Lab Validation
+
+Before running your lab, validate the configuration:
+
+## Complete Lab Validation
+
+Run comprehensive validation on your entire lab:
+
+```bash
+instruqt lab validate
+```
+
+## Test Your Lab Locally
+
+Start your lab to test the complete experience:
+
+```bash
+instruqt lab test my-web-server-lab
+```
+
+This command:
+- Provisions the infrastructure locally
+- Allows you to test all functionality
+- Validates that scripts execute correctly in the container context
+
+## Review Your Complete Lab Structure
+
+Your final lab should have this complete structure:
+
+<FileTree>
+- my-web-server-lab/
+  - main.hcl Lab metadata and configuration
+  - layouts.hcl UI layout definitions (from skeleton)
+  - sandbox.hcl Network and container infrastructure
+  - pages.hcl Content organization with page definitions
+  - tasks.hcl Interactive validation tasks
+  - tabs.hcl User interface (service and terminal)
+  - instructions/
+    - customize_homepage.md Step-by-step guide with context
+  - scripts/
+    - check_homepage.sh Validation logic with helpful feedback
+  - assets/ (from skeleton) Media files
+  - files/ (from skeleton) Configuration templates
+  - notes/ (from skeleton) Note tab content
+  - .git/ Version control history
+  - README.md Template documentation
+</FileTree>
+
+## Final Commit and Documentation
+
+Create a comprehensive final commit:
+
+```bash withOutput
+> git add .
+```
+
+```bash withOutput
+> git commit -m "Complete functional web server lab v1.0
+> This lab teaches web server basics through hands-on nginx customization.
+> Features:
+> - Container-based nginx web server with network isolation
+> - Interactive homepage customization activity  
+> - Task validation with helpful feedback
+> - Professional UI with service preview and terminal access
+> - Comprehensive documentation and troubleshooting
+> Learning Objectives:
+> - Understand web server file structure
+> - Practice direct file editing on servers
+> - Learn relationship between files and live websites
+> - Build confidence with command-line text editors
+> Technical Implementation:
+> - Resource chaining: network -> container -> service/terminal
+> - HCL configuration following Instruqt best practices
+> - Robust validation scripts with clear success/failure paths
+> - User-friendly content organization
+> Ready for deployment to Instruqt platform."
+[main 3f4a567] Complete functional web server lab v1.0
+ 1 file changed, 15 insertions(+)
+```
+
+```bash withOutput
+> git push
+```
+
+## Deploy to GitHub
+
+Push your lab to GitHub for deployment:
+
+```bash withOutput
+> git push origin main
+```
+
+## Deploy to Instruqt
+
+Import your lab from GitHub:
+
+1. Log into [instruqt.com](https://instruqt.com)
+2. Navigate to Labs → New Lab
+3. Select "Import from Git Repository"
+4. Enter your GitHub repository URL
+5. Click "Import Lab"
+
+The platform will validate and provision your lab infrastructure.
+
+## Test the User Experience
+
+Once deployed:
+
+1. Start your lab from the Instruqt platform
+2. Follow your own instructions as a new user would
+3. Verify the task validation works correctly
+4. Check that all tabs (Terminal, Service) function properly
+
+---
+
+**Previous:** [← Step 3 - Content & Tasks](./content-tasks)  
+**Back to:** [Getting Started Overview](./overview)
