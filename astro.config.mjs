@@ -15,7 +15,7 @@ export default defineConfig({
 		starlight({
 			title: 'Instruqt Lab Documentation',
 			logo: {
-				src: './src/assets/instruqt-logo.svg',
+				src: './src/assets/instruqt-logo-white.png',
 				replacesTitle: true,
 			},
 			description: 'Complete guide to creating and managing Instruqt labs',
