@@ -14,20 +14,19 @@
 }
 
 /* Add Instruqt-style gradient border to navigation */
-.header,
-[data-astro-cid-starlight] .header,
-.sl-nav,
-.site-title,
-header {
+/* Target only the outer header div */
+body > .header,
+.page > .header,
+.sl-flex > .header {
   border-bottom: none !important;
   border: none !important;
-}
-
-.header {
   position: relative;
 }
 
-.header::after {
+/* Add gradient border only to the outer header */
+body > .header::after,
+.page > .header::after,
+.sl-flex > .header::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -37,10 +36,10 @@ header {
   background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
 }
 
-/* Remove all potential navigation borders */
+/* Remove borders from inner header and nav elements */
+.header .header,
 nav,
-.sl-nav,
-.site-title {
+.sl-nav {
   border: none !important;
   border-bottom: none !important;
 }
