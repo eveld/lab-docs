@@ -435,3 +435,8 @@ nav[aria-labelledby="on-this-page-heading"] {
 .sidebar nav[aria-label="Main"] details {
   margin-bottom: 1rem !important;
 }
+
+/* Fix main content padding - remove excessive top padding */
+.main-frame {
+  padding-top: var(--sl-nav-height) !important;
+}
