@@ -71,8 +71,8 @@ resource "container" "name" {
   }
   
   port_range {
-    local_range = "3000-3010"
-    host_range = "3000-3010"
+    range = "3000-3010"
+    enable_host = true
     protocol = "tcp"
   }
   
@@ -149,6 +149,8 @@ Essential settings for the container.
 |-------|------|----------|-------------|
 | **image** | block | ✓ | **Docker image configuration** |
 | ↳ name | string | ✓ | Docker image name with optional tag |
+| ↳ username | string |  | Docker registry username for private repositories |
+| ↳ password | string |  | Docker registry password for private repositories |
 | entrypoint | list(string) |  | Override the default entrypoint |
 | command | list(string) |  | Command to run in the container |
 | environment | map(string) |  | Environment variables |
@@ -191,11 +193,13 @@ Port mappings and exposure settings.
 |-------|------|----------|-------------|
 | **port** | block |  | **Port mappings (repeatable)** |
 | ↳ local | int | ✓ | Container port |
-| ↳ host | int |  | Host port (defaults to same as local) |
+| ↳ remote | int |  | Remote port of the service |
+| ↳ host | int |  | Host port |
 | ↳ protocol | string |  | Protocol: "tcp" or "udp" (defaults to "tcp") |
+| ↳ open_in_browser | string |  | Path to open in browser when host port is defined |
 | **port_range** | block |  | **Port range mappings (repeatable)** |
-| ↳ local_range | string | ✓ | Container port range (e.g., "3000-3010") |
-| ↳ host_range | string |  | Host port range (defaults to same as local_range) |
+| ↳ range | string | ✓ | Port range (e.g., "3000-3010") |
+| ↳ enable_host | bool |  | Enable host port mapping (defaults to false) |
 | ↳ protocol | string |  | Protocol: "tcp" or "udp" (defaults to "tcp") |
 
 ### Resource Constraints
@@ -260,9 +264,12 @@ Defines a command-based health check that executes a script or command to determ
 
 These attributes are set by the system after the container is created:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| container_name | string | Fully qualified domain name for the container |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| container_name | string | - | Fully qualified domain name for the container |
+| image.id | string | - | Unique identifier for the image |
+| network[].name | string | - | Network name as created by the system |
+| network[].assigned_address | string | - | IP address assigned by the system |
 
 ## Validation Rules
 

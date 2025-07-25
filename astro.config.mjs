@@ -70,13 +70,27 @@ export default defineConfig({
 					items: [
 						{ label: 'Overview', slug: 'reference' },
 						{
-							label: 'Core Resources',
+							label: 'Content Resources',
 							collapsed: false,
 							items: [
-								{ label: 'Lab', slug: 'reference/resources/lab/lab' },
-								{ label: 'Page', slug: 'reference/resources/page/page' },
-								{ label: 'Layout', slug: 'reference/resources/layout/layout' },
-								{ label: 'Task', slug: 'reference/resources/task/task' },
+								{ label: 'Overview', slug: 'reference/content' },
+								{ label: 'Lab', slug: 'reference/content/lab' },
+								{ label: 'Page', slug: 'reference/content/page' },
+								{ label: 'Layout', slug: 'reference/content/layout' },
+								{ label: 'Task', slug: 'reference/content/task' },
+								{ label: 'Note', slug: 'reference/content/note' },
+								{
+									label: 'Quiz',
+									collapsed: true,
+									items: [
+										{ label: 'Overview', slug: 'reference/content/quiz' },
+										{ label: 'Quiz', slug: 'reference/content/quiz/quiz' },
+										{ label: 'Single Choice', slug: 'reference/content/quiz/singlechoicequestion' },
+										{ label: 'Multiple Choice', slug: 'reference/content/quiz/multiplechoicequestion' },
+										{ label: 'Text Answer', slug: 'reference/content/quiz/textanswerquestion' },
+										{ label: 'Numeric Answer', slug: 'reference/content/quiz/numericanswerquestion' },
+									],
+								},
 							],
 						},
 						{
@@ -84,122 +98,140 @@ export default defineConfig({
 							collapsed: true,
 							items: [
 								{ label: 'Overview', slug: 'reference/sandbox' },
-								{ label: 'Container', slug: 'reference/resources/container/container' },
-								{ label: 'Sidecar', slug: 'reference/resources/container/sidecar' },
-								{ label: 'Network', slug: 'reference/resources/network/network' },
-								{ label: 'Ingress', slug: 'reference/resources/ingress/ingress' },
-								{ label: 'Exec', slug: 'reference/resources/exec/exec' },
-								{ label: 'Copy', slug: 'reference/resources/copy/copy' },
-								{ label: 'Template', slug: 'reference/resources/template/template' },
-								{ label: 'Terraform', slug: 'reference/resources/terraform/terraform' },
-							],
-						},
-						{
-							label: 'Cloud Providers',
-							collapsed: true,
-							items: [
 								{
-									label: 'AWS',
+									label: 'Compute',
 									collapsed: true,
 									items: [
-										{ label: 'Account', slug: 'reference/resources/aws/account' },
-										{ label: 'User', slug: 'reference/resources/aws/user' },
+										{ label: 'Container', slug: 'reference/sandbox/compute/container' },
+										{ label: 'Sidecar', slug: 'reference/sandbox/compute/sidecar' },
 									],
 								},
 								{
-									label: 'Azure',
+									label: 'Networking',
 									collapsed: true,
 									items: [
-										{ label: 'Service Principal', slug: 'reference/resources/azure/serviceprincipal' },
-										{ label: 'Subscription', slug: 'reference/resources/azure/subscription' },
-										{ label: 'User', slug: 'reference/resources/azure/user' },
+										{ label: 'Network', slug: 'reference/sandbox/networking/network' },
+										{ label: 'Ingress', slug: 'reference/sandbox/networking/ingress' },
 									],
 								},
 								{
-									label: 'Google Cloud',
+									label: 'User Interface',
 									collapsed: true,
 									items: [
-										{ label: 'Project', slug: 'reference/resources/google/project' },
-										{ label: 'Service Account', slug: 'reference/resources/google/serviceaccount' },
-										{ label: 'User', slug: 'reference/resources/google/user' },
+										{ label: 'Terminal', slug: 'reference/sandbox/ui/terminal' },
+										{ label: 'Service', slug: 'reference/sandbox/ui/service' },
+										{ label: 'Editor', slug: 'reference/sandbox/ui/editor' },
+										{ label: 'External Website', slug: 'reference/sandbox/ui/externalwebsite' },
 									],
 								},
-							],
-						},
-						{
-							label: 'Kubernetes',
-							collapsed: true,
-							items: [
-								{ label: 'Cluster', slug: 'reference/resources/k8s/cluster' },
-								{ label: 'Config', slug: 'reference/resources/k8s/config' },
-								{ label: 'Helm', slug: 'reference/resources/helm/helm' },
-								{ label: 'Helm Repository', slug: 'reference/resources/helm/helmrepository' },
-							],
-						},
-						{
-							label: 'Nomad',
-							collapsed: true,
-							items: [
-								{ label: 'Cluster', slug: 'reference/resources/nomad/nomadcluster' },
-								{ label: 'Job', slug: 'reference/resources/nomad/nomadjob' },
-							],
-						},
-						{
-							label: 'User Interface',
-							collapsed: true,
-							items: [
-								{ label: 'Terminal', slug: 'reference/resources/terminal/terminal' },
-								{ label: 'Editor', slug: 'reference/resources/editor/editor' },
-								{ label: 'Service', slug: 'reference/resources/service/service' },
-								{ label: 'External Website', slug: 'reference/resources/externalwebsite/externalwebsite' },
-								{ label: 'Note', slug: 'reference/resources/note/note' },
-							],
-						},
-						{
-							label: 'Interactive Content',
-							collapsed: true,
-							items: [
-								{ label: 'Quiz', slug: 'reference/resources/quiz/quiz' },
-								{ label: 'Multiple Choice Question', slug: 'reference/resources/quiz/multiplechoicequestion' },
-								{ label: 'Single Choice Question', slug: 'reference/resources/quiz/singlechoicequestion' },
-								{ label: 'Numeric Answer Question', slug: 'reference/resources/quiz/numericanswerquestion' },
-								{ label: 'Text Answer Question', slug: 'reference/resources/quiz/textanswerquestion' },
-							],
-						},
-						{
-							label: 'Certificates & Security',
-							collapsed: true,
-							items: [
-								{ label: 'Certificate CA', slug: 'reference/resources/cert/certificateca' },
-								{ label: 'Certificate Leaf', slug: 'reference/resources/cert/certificateleaf' },
-								{ label: 'Certificate File', slug: 'reference/resources/cert/file' },
-							],
-						},
-						{
-							label: 'Cache & Registry',
-							collapsed: true,
-							items: [
-								{ label: 'Image Cache', slug: 'reference/resources/cache/imagecache' },
-								{ label: 'Registry', slug: 'reference/resources/cache/registry' },
-								{ label: 'Registry Auth', slug: 'reference/resources/cache/registryauth' },
-							],
-						},
-						{
-							label: 'Random Generators',
-							collapsed: true,
-							items: [
-								{ label: 'Random Creature', slug: 'reference/resources/random/randomcreature' },
-								{ label: 'Random ID', slug: 'reference/resources/random/randomid' },
-								{ label: 'Random Number', slug: 'reference/resources/random/randomnumber' },
-								{ label: 'Random Password', slug: 'reference/resources/random/randompassword' },
-								{ label: 'Random UUID', slug: 'reference/resources/random/randomuuid' },
-							],
-						},
-						{
-							label: 'Utilities',
-							collapsed: true,
-							items: [
-								{ label: 'HTTP', slug: 'reference/resources/http/http' },
+								{
+									label: 'Storage',
+									collapsed: true,
+									items: [
+										{ label: 'Copy', slug: 'reference/sandbox/storage/copy' },
+										{ label: 'Template', slug: 'reference/sandbox/storage/template' },
+									],
+								},
+								{
+									label: 'Cloud Providers',
+									collapsed: true,
+									items: [
+										{
+											label: 'AWS',
+											collapsed: true,
+											items: [
+												{ label: 'Account', slug: 'reference/sandbox/cloud/aws/account' },
+												{ label: 'User', slug: 'reference/sandbox/cloud/aws/user' },
+											],
+										},
+										{
+											label: 'Azure',
+											collapsed: true,
+											items: [
+												{ label: 'Service Principal', slug: 'reference/sandbox/cloud/azure/serviceprincipal' },
+												{ label: 'Subscription', slug: 'reference/sandbox/cloud/azure/subscription' },
+												{ label: 'User', slug: 'reference/sandbox/cloud/azure/user' },
+											],
+										},
+										{
+											label: 'Google Cloud',
+											collapsed: true,
+											items: [
+												{ label: 'Project', slug: 'reference/sandbox/cloud/google/project' },
+												{ label: 'Service Account', slug: 'reference/sandbox/cloud/google/serviceaccount' },
+												{ label: 'User', slug: 'reference/sandbox/cloud/google/user' },
+											],
+										},
+									],
+								},
+								{
+									label: 'Orchestration',
+									collapsed: true,
+									items: [
+										{
+											label: 'Kubernetes',
+											collapsed: true,
+											items: [
+												{ label: 'Cluster', slug: 'reference/sandbox/orchestration/k8s/cluster' },
+												{ label: 'Config', slug: 'reference/sandbox/orchestration/k8s/config' },
+											],
+										},
+										{
+											label: 'Nomad',
+											collapsed: true,
+											items: [
+												{ label: 'Cluster', slug: 'reference/sandbox/orchestration/nomad/nomadcluster' },
+												{ label: 'Job', slug: 'reference/sandbox/orchestration/nomad/nomadjob' },
+											],
+										},
+										{
+											label: 'Helm',
+											collapsed: true,
+											items: [
+												{ label: 'Helm', slug: 'reference/sandbox/orchestration/helm/helm' },
+												{ label: 'Repository', slug: 'reference/sandbox/orchestration/helm/helmrepository' },
+											],
+										},
+									],
+								},
+								{
+									label: 'Utilities',
+									collapsed: true,
+									items: [
+										{ label: 'Exec', slug: 'reference/sandbox/utilities/exec' },
+										{ label: 'HTTP', slug: 'reference/sandbox/utilities/http' },
+										{ label: 'Terraform', slug: 'reference/sandbox/utilities/terraform' },
+										{
+											label: 'Random Generators',
+											collapsed: true,
+											items: [
+												{ label: 'Creature', slug: 'reference/sandbox/utilities/random/randomcreature' },
+												{ label: 'ID', slug: 'reference/sandbox/utilities/random/randomid' },
+												{ label: 'Number', slug: 'reference/sandbox/utilities/random/randomnumber' },
+												{ label: 'Password', slug: 'reference/sandbox/utilities/random/randompassword' },
+												{ label: 'UUID', slug: 'reference/sandbox/utilities/random/randomuuid' },
+											],
+										},
+										{
+											label: 'Cache & Registry',
+											collapsed: true,
+											items: [
+												{ label: 'Image Cache', slug: 'reference/sandbox/utilities/cache/imagecache' },
+												{ label: 'Registry', slug: 'reference/sandbox/utilities/cache/registry' },
+												{ label: 'Registry Auth', slug: 'reference/sandbox/utilities/cache/registryauth' },
+											],
+										},
+									],
+								},
+								{
+									label: 'Certificates',
+									collapsed: true,
+									items: [
+										{ label: 'Certificate CA', slug: 'reference/sandbox/certificates/cert/certificateca' },
+										{ label: 'Certificate Leaf', slug: 'reference/sandbox/certificates/cert/certificateleaf' },
+										{ label: 'Certificate File', slug: 'reference/sandbox/certificates/cert/file' },
+									],
+								},
 							],
 						},
 						{

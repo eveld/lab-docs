@@ -41,9 +41,9 @@ resource "note" "name" {
 
 ### Deprecated Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| title | string | DEPRECATED: Use the `title` field on the tab in your layout instead |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| title | string | - | DEPRECATED: Use the `title` field on the tab in your layout instead |
 
 ## Variable Substitution
 

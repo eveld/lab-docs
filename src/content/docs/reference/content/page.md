@@ -52,9 +52,9 @@ resource "page" "name" {
 
 These attributes are set by the system after the page is processed:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| content | string | Processed content of the markdown file with variables and activities resolved |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| content | string | - | Processed content of the markdown file with variables and activities resolved |
 
 ## Variable Substitution
 

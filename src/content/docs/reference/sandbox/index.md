@@ -1,74 +1,121 @@
 ---
-title: Sandbox Overview
-description: Infrastructure patterns and best practices for Instruqt lab environments
+title: Sandbox Resources
+description: Infrastructure and environment resources for lab sandboxes
 ---
 
-The sandbox is the infrastructure environment where lab participants interact with containers, services, and cloud resources. This section covers patterns, best practices, and configuration guidance for creating effective lab environments.
+Sandbox resources define the technical infrastructure and environment that powers your lab. These resources provide the compute, networking, storage, and services that participants interact with during hands-on activities.
 
-## Infrastructure Components
+## Compute Resources
 
-### Containers
-Docker containers provide isolated environments for applications, tools, and services. They form the foundation of most lab sandboxes.
+### [Container](./compute/container.md)  
+Docker containers for running applications, services, and development environments.
 
-- **[Container Resources](/reference/resources/container/container/)** - Primary compute environments
-- **[Sidecar Containers](/reference/resources/container/sidecar/)** - Supporting services and utilities
+### [Sidecar](./compute/sidecar.md)
+Additional containers that run alongside main containers for specialized functions.
 
-### Networking
-Network configuration enables connectivity between containers and external access to services.
+## Networking
 
-- **[Network Resources](/reference/resources/network/network/)** - Container networking
-- **[Ingress Resources](/reference/resources/ingress/ingress/)** - External access and load balancing
+### [Network](./networking/network.md)
+Isolated Docker networks for container communication and network segmentation.
 
-### Storage & Files
-File management and data persistence across lab sessions.
+### [Ingress](./networking/ingress.md)  
+HTTP/HTTPS ingress controllers for routing external traffic to services.
 
-- **[Copy Resources](/reference/resources/copy/copy/)** - File provisioning
-- **[Template Resources](/reference/resources/template/template/)** - Dynamic file generation
+## User Interface Tabs
 
-### Orchestration
-Container orchestration platforms for complex multi-service environments.
+### [Terminal](./ui/terminal.md)
+Interactive shell sessions that connect to containers or VMs.
 
-- **[Kubernetes](/reference/resources/k8s/cluster/)** - Container orchestration
-- **[Nomad](/reference/resources/nomad/nomadcluster/)** - Alternative orchestration
+### [Service](./ui/service.md)
+Web service tabs that proxy HTTP traffic to running applications.
 
-## Cloud Provider Integration
+### [Editor](./ui/editor.md)
+Code editor interfaces for file manipulation and development.
 
-### Multi-Cloud Support
-Integration with major cloud platforms for realistic production environments.
+### [External Website](./ui/externalwebsite.md)
+Tabs that display external websites and web applications.
 
-- **[AWS Integration](/reference/resources/aws/account/)** - Amazon Web Services
-- **[Azure Integration](/reference/resources/azure/subscription/)** - Microsoft Azure  
-- **[Google Cloud Integration](/reference/resources/google/project/)** - Google Cloud Platform
+## Storage & Files
 
-## Security & Certificates
+### [Copy](./storage/copy.md)
+File copying and directory synchronization between host and containers.
 
-### Certificate Management
-SSL/TLS certificates for secure communication and authentication.
+### [Template](./storage/template.md)
+Template processing for generating configuration files and scripts.
 
-- **[Certificate Authority](/reference/resources/cert/certificateca/)** - Root certificate creation
-- **[Leaf Certificates](/reference/resources/cert/certificateleaf/)** - Service certificates
+## Cloud Integrations
+
+### AWS Resources
+- **[Account](./cloud/aws/account.md)** - AWS account configuration
+- **[User](./cloud/aws/user.md)** - AWS IAM user management
+
+### Azure Resources  
+- **[Subscription](./cloud/azure/subscription.md)** - Azure subscription setup
+- **[Service Principal](./cloud/azure/serviceprincipal.md)** - Azure service principal management
+- **[User](./cloud/azure/user.md)** - Azure user account management
+
+### Google Cloud Resources
+- **[Project](./cloud/google/project.md)** - Google Cloud project configuration
+- **[Service Account](./cloud/google/serviceaccount.md)** - GCP service account management  
+- **[User](./cloud/google/user.md)** - Google Cloud user management
+
+## Container Orchestration
+
+### Kubernetes
+- **[Cluster](./orchestration/k8s/cluster.md)** - Kubernetes cluster provisioning
+- **[Config](./orchestration/k8s/config.md)** - Kubernetes configuration management
+
+### Nomad
+- **[Cluster](./orchestration/nomad/nomadcluster.md)** - Nomad cluster deployment
+- **[Job](./orchestration/nomad/nomadjob.md)** - Nomad job scheduling
+
+### Helm
+- **[Helm](./orchestration/helm/helm.md)** - Helm chart deployment
+- **[Repository](./orchestration/helm/helmrepository.md)** - Helm repository management
+
+## Utilities
+
+### Core Utilities
+- **[Exec](./utilities/exec.md)** - Execute commands on remote systems
+- **[HTTP](./utilities/http.md)** - HTTP requests and API interactions
+- **[Terraform](./utilities/terraform.md)** - Infrastructure as code with Terraform
+
+### Random Values
+- **[Creature](./utilities/random/randomcreature.md)** - Random creature names
+- **[ID](./utilities/random/randomid.md)** - Random identifier generation
+- **[Number](./utilities/random/randomnumber.md)** - Random number generation
+- **[Password](./utilities/random/randompassword.md)** - Random password generation
+- **[UUID](./utilities/random/randomuuid.md)** - UUID generation
+
+### Caching
+- **[Image Cache](./utilities/cache/imagecache.md)** - Container image caching
+- **[Registry](./utilities/cache/registry.md)** - Container registry management
+- **[Registry Auth](./utilities/cache/registryauth.md)** - Registry authentication
+
+## Certificates
+
+### [Certificate Management](./certificates/cert/)
+- **[Certificate CA](./certificates/cert/certificateca.md)** - Certificate authority management
+- **[Certificate Leaf](./certificates/cert/certificateleaf.md)** - End-entity certificate management  
+- **[File](./certificates/cert/file.md)** - Certificate file handling
+
+## Infrastructure Planning
+
+1. **Compute**: Start with containers for your application stack
+2. **Networking**: Create isolated networks for different tiers
+3. **Storage**: Plan file sharing and persistent storage needs
+4. **UI Access**: Design terminal and service access patterns
+5. **Integration**: Add cloud services and orchestration as needed
+6. **Security**: Configure certificates and access controls
 
 ## Best Practices
 
-### Resource Planning
-- **Start Simple**: Begin with single container environments and add complexity gradually
-- **Resource Limits**: Set appropriate CPU and memory limits to prevent resource exhaustion
-- **Network Isolation**: Use networks to isolate different parts of your lab environment
-
-### Performance Optimization
-- **Image Caching**: Use image caching to reduce container startup times
-- **Registry Configuration**: Configure private registries for custom images
-- **Health Checks**: Implement health checks to ensure service availability
-
-### Security Considerations
-- **Principle of Least Privilege**: Run containers with minimal required permissions
-- **Network Segmentation**: Isolate sensitive services using separate networks
-- **Certificate Management**: Use proper certificates for production-like environments
-
-### Scalability Patterns
-- **Modular Design**: Break complex environments into reusable modules
-- **Resource Sharing**: Share common resources across multiple lab components
-- **Dynamic Configuration**: Use variables and functions for flexible configurations
+- **Resource Isolation**: Use separate networks for different application tiers
+- **Minimal Containers**: Choose lightweight base images for faster startup
+- **Health Checks**: Configure health checks for reliable service availability  
+- **Resource Limits**: Set appropriate CPU and memory limits
+- **Security**: Run containers as non-root users when possible
+- **Naming**: Use consistent, descriptive resource names
 
 ## Common Patterns
 
@@ -121,41 +168,3 @@ resource "container" "devbox" {
   }
 }
 ```
-
-### Microservices Architecture
-```hcl
-# Service mesh with multiple services
-resource "network" "mesh" {
-  subnet = "10.0.0.0/24"
-}
-
-resource "container" "service_a" {
-  image { name = "service-a:latest" }
-  network { 
-    id = resource.network.mesh
-    aliases = ["service-a"]
-  }
-}
-
-resource "container" "service_b" {
-  image { name = "service-b:latest" }
-  network { 
-    id = resource.network.mesh
-    aliases = ["service-b"]
-  }
-}
-```
-
-## Troubleshooting
-
-### Common Issues
-- **Container Startup Failures**: Check image availability and resource constraints
-- **Network Connectivity**: Verify network configuration and aliases
-- **Volume Mount Issues**: Ensure source paths exist and permissions are correct
-- **Resource Exhaustion**: Monitor CPU and memory usage across containers
-
-### Debugging Tools
-- **Container Logs**: Monitor container output for errors
-- **Health Checks**: Implement and monitor health check status
-- **Network Testing**: Use network utilities to test connectivity
-- **Resource Monitoring**: Track resource usage and limits

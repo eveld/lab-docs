@@ -43,16 +43,16 @@ resource "terminal" "name" {
 
 ### Hidden/Internal Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| prompt | string | Internal use only |
-| theme | string | Internal use only |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| prompt | string | - | Internal use only |
+| theme | string | - | Internal use only |
 
 ### Deprecated Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| title | string | DEPRECATED: Use the `title` field on the tab in your layout instead |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| title | string | - | DEPRECATED: Use the `title` field on the tab in your layout instead |
 
 ## Validation Rules
 
