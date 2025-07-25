@@ -609,3 +609,92 @@ sl-sidebar-state-persist {
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
+
+/* Table styling with zebra striping and enhanced headers */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #2a2f45;
+  background-color: #1f2440;
+}
+
+/* Table header styling - matches code block colors */
+table thead {
+  background-color: #141829;
+}
+
+table th {
+  background-color: #141829;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.875rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid #2a2f45;
+  border-right: 1px solid #2a2f45;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+table th:last-child {
+  border-right: none;
+}
+
+/* Table body styling with zebra striping */
+table tbody tr {
+  border-bottom: 1px solid #2a2f45;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #1a1e35; /* Slightly lighter than main background */
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #1f2440; /* Matches main code block background */
+}
+
+table td {
+  padding: 0.75rem 1rem;
+  color: #e2e8f0;
+  border-right: 1px solid #2a2f45;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+table td:last-child {
+  border-right: none;
+}
+
+/* Code within table cells */
+table td code,
+table th code {
+  background-color: #2a2f45;
+  color: #e2e8f0;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* Hover effect for table rows */
+table tbody tr:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+/* Special styling for required/optional indicators */
+table td:nth-child(3) {
+  font-weight: 500;
+}
+
+table td:nth-child(3):contains("Yes"),
+table td:nth-child(3):contains("Required") {
+  color: #f093fb;
+}
+
+table td:nth-child(3):contains("No"),
+table td:nth-child(3):contains("Optional") {
+  color: #9ca3af;
+}
