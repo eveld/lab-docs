@@ -5,13 +5,15 @@ description: Initialize your lab project and create a GitHub repository
 
 import { FileTree } from '@astrojs/starlight/components';
 
-WIP
+In this first step, you'll set up the foundation for your Instruqt lab. This involves using the Instruqt CLI to create the initial project structure, understanding what files are generated, and setting up version control with GitHub to track your changes.
 
 ## Understanding Lab Initialization
 
-WIP
+The Instruqt CLI provides several templates to help you get started quickly. The **skeleton template** creates a minimal structure with all the essential files you need, making it perfect for building a lab from scratch. Unlike more complex templates, it gives you a clean starting point without any pre-configured infrastructure or content.
 
 ## Initialize Your Lab
+
+Lab initialization creates the basic file structure and configuration files needed for your Instruqt lab. Think of it as scaffolding - the CLI generates all the essential files so you can focus on building your content rather than setting up boilerplate.
 
 Create a new lab using the Instruqt CLI and select the skeleton template:
 
@@ -24,6 +26,8 @@ Create a new lab using the Instruqt CLI and select the skeleton template:
 ```
 
 ## Explore the Generated Structure
+
+Now let's examine what the CLI created for you. Understanding this structure will help you know where to place your content, scripts, and configuration as you build your lab.
 
 Open your new lab in VS Code to examine what was created:
 
@@ -58,11 +62,30 @@ This opens VS Code with your lab directory. The directory structure looks like t
 
 ## Understanding the Core Files
 
-WIP
+The skeleton template creates a minimal but complete lab structure. Here's what each core file does:
+
+### main.hcl
+The main lab configuration file that defines your lab's metadata, layout, and content structure. The skeleton version includes:
+- Basic lab title and description
+- Reference to the default layout
+- Content structure (you'll add chapters and pages here later)
+
+### layouts.hcl  
+Defines the user interface layout that learners will see. The skeleton includes a simple single-panel layout showing only instructions. You'll typically replace this with multi-column layouts that include terminals, services, and other interactive elements.
+
+### Directory Structure
+The skeleton also creates several directories for organizing your content:
+- `assets/`: Images, videos, and other media files that are displayed to learners in the instructions
+- `files/`: Configuration files, templates, and resources that your sandbox infrastructure uses
+- `instructions/`: Markdown files containing the educational content learners will read
+- `notes/`: Content for note tabs where you can share additional course material like reference guides, cheat sheets, or supplementary information
+- `scripts/`: Validation scripts that check if learners completed tasks correctly
+
+This structure provides a foundation you can build upon - you'll add infrastructure definitions, tasks, and rich content as you develop your lab.
 
 ## Set Up Version Control
 
-Professional lab development requires version control. Create a GitHub repository for your lab:
+Now you'll connect your lab to GitHub so you can track changes and collaborate with others as you develop your lab.
 
 ### Create GitHub Repository
 
@@ -84,18 +107,26 @@ Don't initialize the repository with any files. The Instruqt CLI has already cre
 
 Use VS Code's integrated terminal (View → Terminal) or run these commands in your terminal. Replace `YOUR-USERNAME` with your actual GitHub username:
 
+Tell Git to start watching this folder for changes:
+
 ```bash withOutput
 > git init
 Initialized empty Git repository in /path/to/my-web-server-lab/.git/
 ```
 
+Change the branch name to "main" (what GitHub expects):
+
 ```bash withOutput
 > git branch -m main
 ```
 
+Mark all your files as ready to save:
+
 ```bash withOutput
 > git add .
 ```
+
+Save a snapshot of your files with a note about what you did:
 
 ```bash withOutput
 > git commit -m "Initial lab structure from Instruqt template"
@@ -107,9 +138,13 @@ Initialized empty Git repository in /path/to/my-web-server-lab/.git/
  create mode 100644 layouts.hcl
 ```
 
+Tell Git where to find your GitHub repository:
+
 ```bash withOutput
 > git remote add origin git@github.com:YOUR-USERNAME/my-web-server-lab.git
 ```
+
+Upload your files to GitHub:
 
 ```bash withOutput
 > git push -u origin main
@@ -122,12 +157,16 @@ To github.com:YOUR-USERNAME/my-web-server-lab.git
 
 ## Verify Your Setup
 
-Confirm everything is working correctly:
+Let's double-check that everything is set up correctly before moving to the next step.
+
+Check that you're in the right directory:
 
 ```bash withOutput
 > pwd
 /path/to/my-web-server-lab
 ```
+
+Verify that Git is tracking your files and everything is saved:
 
 ```bash withOutput
 > git status
@@ -135,6 +174,8 @@ On branch main
 Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
+
+Confirm that Git knows where your GitHub repository is:
 
 ```bash withOutput
 > git remote -v
@@ -144,16 +185,14 @@ origin  git@github.com:YOUR-USERNAME/my-web-server-lab.git (push)
 
 ## What You've Built
 
-WIP
+You now have a solid foundation for your Instruqt lab:
+
+- **Lab project structure** with all the essential directories and configuration files
+- **Version control setup** with Git tracking your changes locally and GitHub hosting your repository
+- **Understanding** of how the skeleton template organizes lab content and configuration
+
+Your lab currently contains basic metadata and a simple single-panel layout - perfect for building upon in the next steps where you'll add infrastructure, interactive tasks, and rich educational content.
 
 ## What's Next
 
-WIP
-
-## Troubleshooting
-
-WIP
-
----
-
-**Next:** [Step 2 - Infrastructure Setup](./infrastructure) →
+In the next step, you'll define the infrastructure that powers your lab - creating containers, networks, and user interface elements that learners will interact with.

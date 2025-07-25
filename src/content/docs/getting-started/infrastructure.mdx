@@ -5,15 +5,15 @@ description: Build the container infrastructure and networking for your lab
 
 import { FileTree } from '@astrojs/starlight/components';
 
-WIP
-
-## Resource Chaining
-
-WIP
+Now that your project structure is in place, it's time to define the infrastructure for your lab. In this step, you'll create the containers and networking that form the foundation of your learning environment. You'll also set up the user interface elements - a terminal for command-line access and a service tab to view the web server.
 
 ## Create the Infrastructure Configuration
 
-The skeleton template doesn't include infrastructure by default. Create a new file `sandbox.hcl` to define your containers and networking:
+The skeleton template doesn't include infrastructure by default, so you'll need to create it. Infrastructure in Instruqt labs starts with networking - this provides the foundation that allows containers to communicate with each other and the outside world.
+
+You'll create a network with a private subnet that acts like a mini internet just for your lab. Think of it as creating a private Wi-Fi network that only your lab's containers can access.
+
+Create a new file `sandbox.hcl` to define your containers and networking:
 
 ```hcl showLineNumbers title="sandbox.hcl" {1-4}
 # Network - Foundation for all container communication
@@ -22,9 +22,22 @@ resource "network" "main" {
 }
 ```
 
-WIP
+## Resource Chaining
+
+Resource chaining is how you connect different parts of your infrastructure together. When you create any resource such as a network, container, or service, Instruqt gives each one a unique ID. You can reference these IDs to link resources - like connecting a container to a specific network.
+
+The syntax is simple: `resource.TYPE.NAME.meta.id` where:
+- `TYPE` is the resource type (network, container, service, etc.)
+- `NAME` is the name you gave the resource
+- `meta.id` gets the unique identifier for that resource
+
+For example, to connect our upcoming container to the network we just created, we'll use `resource.network.main.meta.id` to reference the network's ID.
 
 ## Add the Web Server Container
+
+Now you'll add the actual web server that learners will interact with. This nginx container will serve web pages and provide a realistic environment for learning web server concepts. 
+
+The container needs to connect to the network you just created (using resource chaining) and expose port 80 so learners can access the web server through their browser.
 
 Add the nginx container that connects to your network:
 
@@ -51,9 +64,11 @@ resource "container" "webserver" {
 }
 ```
 
-WIP
-
 ## Create User Interface Elements
+
+Now you need to create the interface that learners will actually see and use. This includes a service tab (so they can view the web server in their browser) and a terminal tab (so they can run commands on the server).
+
+These UI elements connect to the infrastructure you just created - the service tab exposes the container's web server, and the terminal gives command-line access to the same container.
 
 Create the `tabs.hcl` file to define what users will see and interact with:
 
@@ -72,13 +87,31 @@ resource "terminal" "shell" {
 }
 ```
 
-WIP
+Before validating your infrastructure, let's visualize how all these resources connect together:
 
-## Visualize the Resource Relationships
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#1f2440', 'primaryTextColor':'#e2e8f0', 'primaryBorderColor':'#2a2f45', 'lineColor':'#ffffff', 'secondaryColor':'#141829', 'tertiaryColor':'#181c32', 'background':'#181c32', 'mainBkg':'#181c32', 'secondBkg':'#181c32', 'tertiaryTextColor':'#e2e8f0', 'edgeLabelBackground':'#181c32', 'clusterBkg':'#181c32'}}}%%
+graph TD
+    A["Network 'main'
+    10.0.200.0/24"] --> B["Container 'webserver'
+    nginx:1.25"]
+    B --> C["Service 'webserver'
+    Port 80
+    HTTP"]
+    B --> D["Terminal 'shell'
+    /bin/bash"]
+    
+    style A fill:#667eea,stroke:#2a2f45,color:#ffffff
+    style B fill:#764ba2,stroke:#2a2f45,color:#ffffff
+    style C fill:#4facfe,stroke:#2a2f45,color:#ffffff
+    style D fill:#4facfe,stroke:#2a2f45,color:#ffffff
+```
 
-WIP
+This shows how resource chaining connects everything: the container joins the network, while the service and terminal tabs both target the container to provide user access.
 
 ## Validate Your Infrastructure
+
+Before moving forward, it's important to check that your HCL configuration is correct. The Instruqt CLI can validate your syntax, check for missing references, and catch common configuration errors before you try to run your lab.
 
 Test that your configuration is syntactically correct:
 
@@ -86,15 +119,17 @@ Test that your configuration is syntactically correct:
 instruqt lab validate
 ```
 
-WIP
-
 ## Commit Your Infrastructure
 
-Save your progress to version control:
+Now that your infrastructure is complete and validated, it's time to save this milestone to Git. This creates a snapshot of your working infrastructure that you can return to if needed, and documents your progress as you build the lab.
+
+Stage your new infrastructure files:
 
 ```bash withOutput
 > git add .
 ```
+
+Create a commit with a descriptive message about your infrastructure:
 
 ```bash withOutput
 > git commit -m "Add network, container, and UI infrastructure"
@@ -103,15 +138,23 @@ Save your progress to version control:
  create mode 100644 tabs.hcl
 ```
 
+Upload your infrastructure changes to GitHub:
+
 ```bash withOutput
 > git push
 ```
 
 ## What You've Built
 
-WIP
+You've successfully created the infrastructure foundation for your lab:
+
+- **Network infrastructure** that provides isolated networking for your lab environment
+- **Container infrastructure** running nginx web server that learners will customize
+- **User interface elements** including terminal access and web service viewing
+- **Resource connections** demonstrating how Instruqt components link together through resource chaining
+
+Your lab now has a complete infrastructure setup that learners can interact with. The next step is to make it truly interactive by adding educational content and validation tasks.
 
 ## What's Next
 
-WIP
-
+In the next step, you'll create interactive content and tasks that guide learners through hands-on activities while automatically validating their progress.

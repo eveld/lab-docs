@@ -1,92 +1,115 @@
 ---
 title: Step 4 - Testing & Deployment
-description: Validate your complete lab and deploy it to the Instruqt platform
+description: Deploy your lab to Instruqt and test the complete learner experience
 ---
 
 import { FileTree } from '@astrojs/starlight/components';
 
-WIP
+Your lab is complete and ready for learners! In this final step, you'll deploy your lab to the Instruqt platform and test it as a learner would experience it. This ensures everything works correctly before sharing it with others.
 
-## Lab Validation
+## Final Validation
 
-WIP
-
-## Complete Lab Validation
-
-Run comprehensive validation on your entire lab:
+Before deploying, run one final validation to ensure your complete lab configuration is correct:
 
 ```bash
 instruqt lab validate
 ```
 
-## Test Your Lab Locally
+This checks for any configuration errors, missing references, or syntax issues that could prevent your lab from working properly on the platform.
 
-Start your lab to test the complete experience:
+## Deploy to Instruqt Platform
+
+Now you'll upload your lab to the Instruqt platform where learners can access it. Use the Instruqt CLI to push your lab:
 
 ```bash
-instruqt lab test my-web-server-lab
+instruqt lab push
 ```
 
-WIP
+This command:
+- Uploads your lab configuration and content to Instruqt
+- Validates the lab structure on the platform
+- Makes your lab available for testing and sharing
 
-## Review Your Complete Lab Structure
+The CLI will show you a URL where you can access your lab once the deployment is complete.
 
-Your final lab should have this complete structure:
+## Test the Learner Experience
 
-<FileTree>
-- my-web-server-lab/
-  - main.hcl Lab metadata and configuration
-  - layouts.hcl UI layout definitions (from skeleton)
-  - sandbox.hcl Network and container infrastructure
-  - pages.hcl Content organization with page definitions
-  - tasks.hcl Interactive validation tasks
-  - tabs.hcl User interface (service and terminal)
-  - instructions/
-    - customize_homepage.md Step-by-step guide with context
-  - scripts/
-    - check_homepage.sh Validation logic with helpful feedback
-  - assets/ (from skeleton) Media files
-  - files/ (from skeleton) Configuration templates
-  - notes/ (from skeleton) Note tab content
-  - .git/ Version control history
-  - README.md Template documentation
-</FileTree>
+After deployment, test your lab exactly as a learner would experience it:
 
-## Final Commit and Documentation
+### Start Your Lab
 
-Create a comprehensive final commit:
+Navigate to the lab URL provided by the CLI or find your lab in the Instruqt platform and click "Start Lab".
 
-```bash withOutput
-> git add .
-```
+### Verify Infrastructure
 
-```bash withOutput
-> git commit -m "Complete functional web server lab v1.0"
-[main 3f4a567] Complete functional web server lab v1.0
- 1 file changed, 15 insertions(+)
-```
+Check that all your infrastructure components are working:
 
-```bash withOutput
-> git push
-```
+1. **Terminal access** - Ensure you can run commands in the terminal tab
+2. **Web service** - Verify the nginx welcome page loads in the service tab  
+3. **File system** - Confirm you can navigate to `/usr/share/nginx/html/` and see the `index.html` file
 
-## Deploy to GitHub
+### Complete the Task
 
-Push your lab to GitHub for deployment:
+Go through the lab as a learner would:
 
-```bash withOutput
-> git push origin main
-```
+1. **Read the instructions** - Review the educational content you created
+2. **Edit the homepage** - Add "Hello from my web server!" to the nginx homepage
+3. **Test the validation** - Ensure the task validates correctly when completed
+4. **Check the service tab** - Verify your changes appear in the web browser
 
-## Deploy to Instruqt
+### Verify Task Validation
 
-WIP
+The most critical test is ensuring your validation script works correctly:
 
-## Test the User Experience
+- **When incomplete**: The task should show as not completed and provide helpful feedback
+- **When completed**: The task should automatically validate and show success
+- **Error handling**: If learners make mistakes, they should receive clear guidance
 
-WIP
+## Troubleshooting Common Issues
 
----
+If you encounter problems during testing:
 
-**Previous:** [← Step 3 - Content & Tasks](./content-tasks)  
-**Back to:** [Getting Started Overview](./overview)
+**Lab won't start:**
+- Check the validation output for configuration errors
+- Ensure all resource references are correct
+- Verify your GitHub repository is accessible
+
+**Task validation fails:**
+- Test your validation script manually in the terminal
+- Check file paths and permissions
+- Ensure the script logic matches the task requirements
+
+**Infrastructure issues:**
+- Verify container images are pulling correctly
+- Check network connectivity between resources
+- Confirm service ports are properly exposed
+
+## Share Your Lab
+
+Once testing is complete, your lab is ready to share:
+
+- **Direct link**: Share the lab URL with specific learners
+- **Embed in courses**: Add your lab to existing Instruqt tracks or courses
+- **Team sharing**: Make the lab available to your organization or team
+
+## What You've Accomplished
+
+Congratulations! You've successfully created and deployed a complete Instruqt lab that includes:
+
+- **Infrastructure as code** with containers, networking, and services
+- **Interactive educational content** that teaches real-world skills
+- **Automated validation** that provides immediate feedback to learners
+- **Professional deployment** on the Instruqt platform ready for use
+
+You now have the foundation to create more complex labs with multiple tasks, advanced infrastructure, and sophisticated learning experiences.
+
+## What's Next
+
+With this foundation, you can:
+
+- **Add more tasks** to create multi-step learning experiences
+- **Expand infrastructure** with databases, APIs, or cloud services  
+- **Create lab series** that build upon each other
+- **Explore advanced features** like dynamic content and branching scenarios
+
+Your journey in creating interactive learning experiences with Instruqt has just begun!

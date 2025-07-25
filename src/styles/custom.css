@@ -381,9 +381,17 @@ dialog[aria-label="Search"]::backdrop {
   border-radius: 0 8px 8px 0;
 }
 
-/* Fix mermaid graph contrast */
+/* Fix mermaid graph contrast and remove borders */
 .mermaid {
   --mermaid-font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Remove any borders from mermaid SVG elements */
+.mermaid svg {
+  border: none !important;
+  background: transparent !important;
 }
 
 /* Light mode mermaid styling */
@@ -419,6 +427,13 @@ nav[aria-labelledby="on-this-page-heading"] {
 .right-sidebar-panel h2,
 #on-this-page-heading {
   padding-top: 1rem !important;
+}
+
+/* Increase font size in "On this page" section */
+nav[aria-labelledby="starlight__on-this-page"] ul li a,
+nav[aria-labelledby="starlight__on-this-page"] ul li a span {
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
 }
 
 /* Right sidebar background */
